@@ -1,1 +1,132 @@
-/* No CSS *//*# sourceMappingURL=style.css.map */
+@font-face {
+  font-family: BazookaRegular;
+  src: url(../font/BazookaRegular.ttf);
+}
+
+@media (min-width: 320px) {
+  .headingBar {
+    background-color: #f6f7ed;
+    padding-bottom: 15px;
+  }
+  .headingBar .logo img {
+    width: 150px;
+  }
+  .headingBar .headCenterText {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .headingBar {
+    background-color: #f6f7ed;
+    padding-bottom: 15px;
+  }
+  .headingBar .logo img {
+    width: 150px;
+  }
+  .headingBar .headCenterText {
+    display: block;
+    font-family: BazookaRegular;
+    font-size: 30px;
+    color: #9a0000;
+    text-align: Left;
+  }
+}
+
+@media (min-width: 1024px) {
+  .headingBar {
+    background-color: #f6f7ed;
+    padding-bottom: 15px;
+  }
+  .headingBar .logo img {
+    width: 150px;
+  }
+  .headingBar .headCenterText {
+    font-family: BazookaRegular;
+    font-size: 40px;
+    color: #9a0000;
+    text-align: Left;
+  }
+}
+
+.navbar {
+  background-color: #9a0000;
+}
+
+.navbar .navbar-collapse {
+  background-color: #9a0000;
+}
+
+.navbar .navbar-collapse .nav-link,
+.navbar .navbar-collapse .dropdown-toggle {
+  color: white;
+}
+
+.navbar .navbar-collapse .dropdown-menu {
+  background-color: #b40000;
+}
+
+.navbar .navbar-collapse .dropdown-menu .dropdown-item {
+  color: white;
+}
+
+.navbar .navbar-collapse .dropdown-menu .dropdown-item:hover {
+  background-color: #bd6161;
+}
+
+@media (min-width: 320px) {
+  .navbar label {
+    display: block;
+  }
+}
+
+@media (min-width: 768px) {
+  .navbar label {
+    display: none;
+  }
+}
+
+.slider .carousel-item img {
+  z-index: 1;
+  width: 100%;
+}
+
+.slider .carousel-control-prev:hover {
+  background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0)));
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+}
+
+.slider .carousel-control-next:hover {
+  background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.5)));
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
+}
+
+@media (min-width: 320px) {
+  .slider .carousel-indicators {
+    visibility: hidden;
+  }
+}
+
+@media (min-width: 1024px) {
+  .slider .carousel-indicators {
+    visibility: visible;
+  }
+  .slider .carousel-control-prev span, .slider .carousel-control-next span {
+    font-size: 3rem;
+  }
+}
+
+.header-top-design {
+  background-color: #f6f7ed;
+  background-image: url(../img/header_top_design.png);
+  background-repeat: repeat-x;
+}
+
+.slider-top-design {
+  background-image: url(../img/slider_bottom.png);
+  background-repeat: repeat-x;
+  position: relative;
+  margin-top: -5px;
+  z-index: 999;
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,58 @@
+// Mobile S : 320px and up
+@media (min-width: 320px) {
+  .headingBar {
+    background-color: #f6f7ed;
+    padding-bottom: 15px;
+    .logo {
+      img {
+        width: 150px;
+      }
+    }
+
+    .headCenterText {
+      display: none;
+    }
+  }
+}
+
+
+// Tablets : 768px and up
+@media (min-width: 768px) {
+  .headingBar {
+    background-color: #f6f7ed;
+    padding-bottom: 15px;
+    .logo {
+      img {
+        width: 150px;
+      }
+    }
+
+    .headCenterText {
+      display: block;
+      font-family: BazookaRegular;
+      font-size: 30px;
+      color: #9a0000;
+      text-align: Left;
+    }
+  }
+}
+
+// Laptop : 1024px and up
+@media (min-width: 1024px) {
+  .headingBar {
+    background-color: #f6f7ed;
+    padding-bottom: 15px;
+    .logo {
+      img {
+        width: 150px;
+      }
+    }
+
+    .headCenterText {
+      font-family: BazookaRegular;
+      font-size: 40px;
+      color: #9a0000;
+      text-align: Left;
+    }
+  }
+}

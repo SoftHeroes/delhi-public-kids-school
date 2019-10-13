@@ -1,0 +1,18 @@
+@import "fonts";
+@import "headingBar";
+@import "navbar";
+@import "slider";
+
+
+.header-top-design {
+  background-color: #f6f7ed;
+  background-image: url(../img/header_top_design.png);
+  background-repeat: repeat-x;
+}
+.slider-top-design {
+  background-image: url(../img/slider_bottom.png);
+  background-repeat: repeat-x;
+  position: relative;
+  margin-top: -5px;
+  z-index: 999;
+}
