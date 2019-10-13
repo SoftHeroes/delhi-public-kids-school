@@ -35,13 +35,13 @@
 			<a class="app-header__logo" href="index.html">Delhi Kids School</a>
 			<!-- Sidebar toggle button--><a class="app-sidebar__toggle" href="#" data-toggle="sidebar" aria-label="Hide Sidebar"></a>
 			<!-- Navbar Right Menu-->
-			@include('header.header')
+			@include('dashboard.header.header')
 			@yield('header')
 		</header>
 		<!-- Sidebar menu-->
 		<div class="app-sidebar__overlay" data-toggle="sidebar"></div>
 		<aside class="app-sidebar">
-			@include('sidebar.sidebar')
+			@include('dashboard.sidebar.sidebar')
 			@yield('sidebar')
 		</aside>
 		<main class="app-content">

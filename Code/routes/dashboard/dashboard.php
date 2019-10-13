@@ -10,9 +10,9 @@
 */
 
 Route::get('/dashboard',['middleware'=>'dashboard_auth',function () {
-    return view('dashboard');
+    return view('dashboard/dashboard');
 }])->name('vDashboard');
 
 Route::get('/createCollage',['middleware'=>'dashboard_auth',function () {
-    return view('createCollage');
+    return view('dashboard/createCollage');
 }])->name('vCreateCollage');

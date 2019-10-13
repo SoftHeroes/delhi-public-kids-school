@@ -10,10 +10,10 @@
 */
 
 Route::get('/forgetPassword/{emailID}/{source}/{language}',['middleware'=>'dashboard_login', function ($emailID, $source, $language) {
-    return view('forgetPassword', compact('emailID', 'source', 'language'));
+    return view('dashboard/forgetPassword', compact('emailID', 'source', 'language'));
 }])->name('vForgetPassword');
 
 // Admin Logic View routes : START
-Route::get('/resendOTP','forgetPassword@sendOTP')->name('resendOTP');
-Route::post('/resetPassword', 'forgetPassword@resetPassword')->name('resetPassword');
+Route::get('/resendOTP','dashboard\forgetPassword@sendOTP')->name('resendOTP');
+Route::post('/resetPassword', 'dashboard\forgetPassword@resetPassword')->name('resetPassword');
 // Admin Logic View routes : END

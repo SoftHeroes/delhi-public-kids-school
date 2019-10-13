@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('dashboard.layouts.app')
 @section('content')
 {{-- Content Header --}}
 <div class="app-title">

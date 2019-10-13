@@ -33,7 +33,7 @@ class PasswordRecovery extends ServiceProvider
         $to_email = 'ShubhamJobanputra@gmail.com';
         $data = array('OTP'=>$OTP,);
 
-        Mail::send('email.passwordRecovery', $data, function($message) use ($to_name, $to_email) {
+        Mail::send('dashboard.email.passwordRecovery', $data, function($message) use ($to_name, $to_email) {
         $message->to($to_email, $to_name)->subject('Password recovery');
         $message->from('Test@game.com','Delhi Kids School');
         });
