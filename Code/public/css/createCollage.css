@@ -1,0 +1,88 @@
+* {
+    box-sizing: border-box;
+}
+
+/* Create columns that floats next to each other */
+.column {
+    float: left;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.layer{
+    border: 1px solid #b4b4b4b4;
+}
+/******************************
+* Style for left side content *
+******************************/
+#leftSide {
+    color: #aaa;
+    width: 186px;
+    padding: 5px;
+    margin: 0 20px;
+    overflow: auto;
+    background-color: #fff;
+    border: dashed 1px #bbb;
+    box-shadow: 0px 0px 0px 5px #f7f7f7, 0px 0px 2px 7px #bbb, 0px 0px 5px 5px #f7f7f7 inset;
+}
+
+/***************************
+* Style for drop zone area *
+***************************/
+#dropZone {
+    padding: 30px 0;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+#dropZone.dragover {
+    background: #DCDCDC;
+}
+
+/**************************
+* Style for image preview *
+**************************/
+.grabImg {
+    margin: 0 3px;
+}
+.grabImg:hover {
+    cursor: grab;
+}
+
+/*********************************************
+* Style for model selection drop-down button *
+*********************************************/
+#buttonsArea {
+    margin: 0 15px 0 50px;
+}
+
+/*******************
+* Style for canvas *
+*******************/
+#photo{
+    margin-bottom: -150px;
+}
+
+#background {
+    padding: 5px;
+    width: 100%;
+    height: 60%;
+    background-color: #fff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -webkit-crisp-edges;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+}
+
+.layer {
+	padding: 5px;
+    position: absolute;
+    background-color: #fff;
+}

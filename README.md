@@ -1,1 +1,0 @@
-# delhi-public-kids-school

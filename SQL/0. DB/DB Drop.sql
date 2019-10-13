@@ -1,0 +1,5 @@
+DROP DATABASE IF EXISTS dpks_master;
+
+CREATE DATABASE dpks_master
+CHARACTER SET utf8
+COLLATE utf8_general_ci;
