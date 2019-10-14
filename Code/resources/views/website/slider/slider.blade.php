@@ -1,38 +1,32 @@
 @section('slider')
 
+@php
+    $sliders = DB::select("select uniqueID,title,imageName from sliders where deletedAt IS NULL");
+@endphp
 <!-- Image Slider -->
+@if (count($sliders) > 0 )
 <div id="slides" class="carousel slide slider" data-ride="carousel">
-    <ul class="carousel-indicators">
-        <li data-target="#slides" data-slide-to="0" class="active"></li>
-        <li data-target="#slides" data-slide-to="1"></li>
-        <li data-target="#slides" data-slide-to="2"></li>
-        <li data-target="#slides" data-slide-to="3"></li>
-        <li data-target="#slides" data-slide-to="4"></li>
-    </ul>
-    <div class="carousel-inner">
-        <div class="carousel-item active">
-            <img class="img-fluid" src="{{ asset('website/img/slider/S_1.jpg') }}">
-        </div>
-        <div class="carousel-item">
-            <img class="img-fluid" src="{{ asset('website/img/slider/S_2.jpg') }}">
-        </div>
-        <div class="carousel-item">
-            <img class="img-fluid" src="{{ asset('website/img/slider/S_3.jpg') }}">
-        </div>
-        <div class="carousel-item">
-            <img class="img-fluid" src="{{ asset('website/img/slider/S_4.jpg') }}">
-        </div>
-        <div class="carousel-item">
-            <img class="img-fluid" src="{{ asset('website/img/slider/S_5.jpg') }}">
-            <div class="carousel-caption">
-                <h3>First slide</h3>
-                <p>This is the first slide.</p>
+        <ul class="carousel-indicators">
+            @for ($i = 0; $i < count($sliders); $i++)
+                <li data-target="#slides" data-slide-to="0" class="{{$i == 0 ? 'active' : ''}}"></li>
+            @endfor
+        </ul>
+        <div class="carousel-inner">
+            @for ($i = 0; $i < count($sliders); $i++)
+            <div class="carousel-item {{$i == 0 ? 'active' : ''}}">
+                <img class="img-fluid" src="{{asset('/img/sliders/'.$sliders[$i]->imageName) }}">
+                @if ( !is_null($sliders[$i]->title) && trim($sliders[$i]->title) != "" )
+                <div class="carousel-caption">
+                    <h3>{{$sliders[$i]->title}}</h3>
+                </div>
+                @endif
             </div>
+            @endfor
         </div>
+        <a class="carousel-control-prev" href="#slides" role="button" data-slide="prev"><span class="fas fa-chevron-left"></span></a>
+        <a class="carousel-control-next" href="#slides" role="button" data-slide="next"><span class="fas fa-chevron-right"></span></a>
+        </a>
     </div>
-    <a class="carousel-control-prev" href="#slides" role="button" data-slide="prev"><span class="fas fa-chevron-left"></span></a>
-    <a class="carousel-control-next" href="#slides" role="button" data-slide="next"><span class="fas fa-chevron-right"></span></a>
-    </a>
-</div>
+@endif
 <!-- Image Slider -->
 @endsection

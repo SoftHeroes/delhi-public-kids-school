@@ -2,7 +2,7 @@
 <div class="container-fluid notice">
     <img class="img-fluid" src="{{ asset('website/img/board.png') }}" alt="">
     <div class="school-updates">
-        <marquee behavior="" direction="up" onmouseover="stop();" onmouseout="start();" scrollamount="8">
+        <marquee behavior="" direction="up" onmouseover="stop();" onmouseout="start();" scrollamount="4">
             <div class="singleNew">
                 <h3><a href="">Lorem ipsum dolor sit amet.</a></h3>
                 <hr>
