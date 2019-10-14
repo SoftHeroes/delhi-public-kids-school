@@ -1,0 +1,22 @@
+// Mobile S : 320px and up
+@media (min-width: 320px) {
+    .contact{
+        border-right: none;
+        border-bottom: 5px solid #9a0000;
+        h1,h2,h3,h4,h5,h6,p,a,label{
+            font-family: BalognaBoldUII;
+            color: #9a0000;
+        }
+    }
+}
+// Tablets : 768px and up
+@media (min-width: 768px) {
+    .contact{
+        border-right: 5px solid #9a0000;
+        border-bottom: none;
+        h1,h2,h3,h4,h5,h6,p,a,label{
+            font-family: BalognaBoldUII;
+            color: #9a0000;
+        }
+    }
+}

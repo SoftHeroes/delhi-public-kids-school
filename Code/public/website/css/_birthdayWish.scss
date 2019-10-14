@@ -1,0 +1,99 @@
+// Mobile S : 320px and up
+@media (min-width: 320px) {
+    .birthdayWish{
+        padding-bottom: 2rem;
+        padding-top: 2rem;
+        .sparkles{  
+            position: absolute;
+            left: 0;
+        }
+    }
+}
+
+// Mobile M : 320px and up
+@media (min-width: 320px) {
+}
+
+// Mobile L : 425px and up
+@media (min-width: 425px) {
+    .birthdayWish{
+        padding-bottom: 2rem;
+        padding-top: 2rem;
+        .sparkles{
+            width: 90%;
+            position: absolute;
+            left: 0;
+        }
+    }
+}
+
+// Tablets : 768px and up
+@media (min-width: 768px) {
+    .birthdayWish{
+        .wishText{
+            font-size: 1rem;
+        }
+        padding-bottom: 2rem;
+        padding-top: 2rem;
+        .sparkles{
+            width: 100%;
+            position: absolute;
+            left: 0;
+        }
+    }
+}
+
+// Laptop : 1024px and up
+@media (min-width: 1024px) {
+    .birthdayWish{
+        .wishText{
+            font-size: 1.25rem;
+        }
+        padding-bottom: 2rem;
+        padding-top: 2rem;
+        .sparkles{
+            width: 100%;
+            position: absolute;
+            left: 0;
+        }
+    }
+}
+
+@media (min-width: 1250px) {
+    .birthdayWish{
+        .wishText{
+            font-size: 1.5rem;
+        }
+        padding-bottom: 2rem;
+        padding-top: 2rem;
+        .sparkles{
+            width: 85%;
+            position: absolute;
+            left: 3rem;
+        }
+    }
+}
+
+// Laptop L : 1440px and up
+@media (min-width: 1440px) {
+    .birthdayWish{
+        .wishText{
+            font-size: 1.5rem;
+        }
+        padding-bottom: 2rem;
+        padding-top: 2rem;
+        .sparkles{
+            width: 85%;
+            position: absolute;
+            left: 3rem;
+        }
+    }
+}
+
+// Laptop L : 1500px and up
+@media (min-width: 1500px) {
+}
+
+// 4K : 2560px and up
+@media (min-width: 2560px) {
+}
