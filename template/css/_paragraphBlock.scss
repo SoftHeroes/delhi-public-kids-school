@@ -1,0 +1,22 @@
+.paragraphBlock {
+	padding: 3rem;
+
+	.title {
+		font-family: BassetBoldItalic;
+		font-size: 28px;
+		color: #9a0000;
+		text-align: left;
+		margin: 8px;
+		font-weight: 800;
+	}
+
+	.subText {
+		font-family: BassetBoldItalic;
+		font-size: 16px;
+		color: #a19d9d;
+		margin-top: 10px;
+		margin-bottom: 5px;
+		text-align: left;
+		line-height: 23px;
+	}
+}

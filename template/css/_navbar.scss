@@ -1,37 +1,40 @@
 .navbar {
-  background-color: #9a0000;
-  .navbar-collapse {
-    background-color: #9a0000;
+	z-index: 999;
+	background-color: #9a0000;
+	.navbar-collapse {
+		background-color: #9a0000;
 
-    .nav-link,
-    .dropdown-toggle {
-      color: white;
-    }
-    .dropdown-menu {
-      background-color: rgb(180, 0, 0);
-      .dropdown-item {
-        color: white;
-        &:hover {
-          background-color: rgb(189, 97, 97);
-        }
-      }
-    }
-  }
+		.nav-link,
+		.dropdown-toggle {
+			color: white;
+			padding-right: 2rem;
+		}
+		.dropdown-menu {
+
+			background-color: rgb(180, 0, 0);
+			.dropdown-item {
+				color: white;
+				&:hover {
+					background-color: rgb(189, 97, 97);
+				}
+			}
+		}
+	}
 }
 
 // Mobile L : 425px and up
 @media (min-width: 320px) {
-  .navbar {
-    label{
-      display: block;
-    }
-  }
+	.navbar {
+		label {
+			display: block;
+		}
+	}
 }
 // Tablets : 768px and up
 @media (min-width: 768px) {
-  .navbar {
-    label{
-      display: none;
-    }
-  }
+	.navbar {
+		label {
+			display: none;
+		}
+	}
 }

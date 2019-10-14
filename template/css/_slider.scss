@@ -1,61 +1,65 @@
-.slider{
-    .carousel-item{
-      img{
-        z-index: 1;
-        width: 100%;
-      }
-    }
-    .carousel-control-prev{
-      &:hover{
-        background-image: linear-gradient(to right,rgba(0,0,0,0.5),rgba(0,0,0,0));
-      }
-    }
-    .carousel-control-next{
-      &:hover{
-        background-image: linear-gradient(to right,rgba(0,0,0,0),rgba(0,0,0,0.5));
-      }
-    }
-  }
-  
-  // Mobile S : 320px and up
-  @media (min-width: 320px) {
-    .slider{
-      .carousel-indicators{
-        visibility: hidden;
-      }
-    }
-  }
-  
-  // Mobile M : 320px and up
-  @media (min-width: 320px) {
-  }
-  
-  // Mobile L : 425px and up
-  @media (min-width: 425px) {
-  }
-  
-  // Tablets : 768px and up
-  @media (min-width: 768px) {
-  }
-  
-  // Laptop : 1024px and up
-  @media (min-width: 1024px) {
-    .slider{
-      .carousel-indicators{
-        visibility:visible;
-      }
-      .carousel-control-prev,.carousel-control-next{
-        span{
-          font-size: 3rem;
-        }
-      }
-    }
-  }
-  
-  // Laptop L : 1440px and up
-  @media (min-width: 1440px) {
-  }
-  
-  // 4K : 2560px and up
-  @media (min-width: 2560px) {
-  }
+.slider {
+	margin-top: -15px;
+	z-index: 998;
+
+	.carousel-item {
+		img {
+			z-index: 998;
+			width: 100%;
+		}
+	}
+	.carousel-control-prev {
+		&:hover {
+			background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+		}
+	}
+	.carousel-control-next {
+		&:hover {
+			background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
+		}
+	}
+}
+
+// Mobile S : 320px and up
+@media (min-width: 320px) {
+	.slider {
+		.carousel-indicators {
+			visibility: hidden;
+		}
+	}
+}
+
+// Mobile M : 320px and up
+@media (min-width: 320px) {
+}
+
+// Mobile L : 425px and up
+@media (min-width: 425px) {
+}
+
+// Tablets : 768px and up
+@media (min-width: 768px) {
+}
+
+// Laptop : 1024px and up
+@media (min-width: 1024px) {
+	.slider {
+		.carousel-indicators {
+			visibility: visible;
+		}
+		.carousel-control-prev,
+		.carousel-control-next {
+			span {
+				font-size: 3rem;
+			}
+		}
+	}
+}
+
+// Laptop L : 1440px and up
+@media (min-width: 1440px) {
+}
+
+// 4K : 2560px and up
+@media (min-width: 2560px) {
+}

@@ -1,0 +1,24 @@
+.newHeadingBlock {
+	// background-color: #f6f7ed;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+
+	.newsheading {
+		font-family: BassetBoldItalic;
+		font-size: 25px;
+		color: #9a0000;
+		text-align: center;
+		margin-top: 5px;
+		font-weight: bold;
+	}
+	marquee{
+		padding-top: 1rem;
+		.news-title {
+			font-family: BassetBoldItalic;
+			font-size: 18px;
+			color: #9a0000;
+			text-align: center;
+			padding-left: 1rem;
+		}
+	}
+}

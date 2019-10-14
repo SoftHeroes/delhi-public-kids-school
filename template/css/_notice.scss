@@ -1,0 +1,248 @@
+// Mobile S : 320px and up
+@media (min-width: 320px) {
+    .notice{
+        .school-updates{
+            position: absolute;
+            height: 7rem;
+            
+            top: 6rem;
+            padding-left: 3rem;
+            padding-right: 5rem;
+            marquee{
+                height: 7rem;
+    
+                .singleNew{
+                    h3{
+                        a{
+                            color: #b4b4b4;
+                            font-family: Daneehand;
+                        }
+                    }
+                    p{
+                        color: white;
+                    }
+                    hr{
+                        width: 90%;
+                        background-color: white;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Mobile M : 375px and up
+@media (min-width: 375px) {
+    .notice{
+        .school-updates{
+            position: absolute;
+            height: 9rem;
+            
+            top: 6rem;
+            padding-left: 3rem;
+            padding-right: 5rem;
+            marquee{
+                height: 9rem;
+    
+                .singleNew{
+                    h3{
+                        a{
+                            color: #b4b4b4;
+                            font-family: Daneehand;
+                        }
+                    }
+                    p{
+                        color: white;
+                    }
+                    hr{
+                        width: 90%;
+                        background-color: white;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Mobile L : 425px and up
+@media (min-width: 425px) {
+    .notice{
+        .school-updates{
+            position: absolute;
+            height: 11rem;
+            
+            top: 6rem;
+            padding-left: 3rem;
+            padding-right: 5rem;
+            marquee{
+                height: 11rem;
+    
+                .singleNew{
+                    h3{
+                        a{
+                            color: #b4b4b4;
+                            font-family: Daneehand;
+                        }
+                    }
+                    p{
+                        color: white;
+                    }
+                    hr{
+                        width: 90%;
+                        background-color: white;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Tablets : 768px and up
+@media (min-width: 768px) {
+    .notice{
+        .school-updates{
+            position: absolute;
+            height: 5rem;
+            
+            top: 4rem;
+            padding-left: 3rem;
+            padding-right: 5rem;
+            marquee{
+                height: 5rem;
+    
+                .singleNew{
+                    h3{
+                        font-size: 1rem;
+                        a{
+                            color: #b4b4b4;
+                            font-family: Daneehand;
+                        }
+                    }
+                    p{
+                        font-size: 0.75rem;
+                        color: white;
+                    }
+                    hr{
+                        width: 90%;
+                        background-color: white;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Laptop : 1024px and up
+@media (min-width: 1024px) {
+    .notice{
+        .school-updates{
+            position: absolute;
+            height: 8rem;
+            
+            top: 5rem;
+            padding-left: 3rem;
+            padding-right: 5rem;
+            marquee{
+                height: 8rem;
+    
+                .singleNew{
+                    h3{
+                        font-size: 1.5rem;
+                        a{
+                            color: #b4b4b4;
+                            font-family: Daneehand;
+                        }
+                    }
+                    p{
+                        font-size: 0.75rem;
+                        color: white;
+                    }
+                    hr{
+                        width: 90%;
+                        background-color: white;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Laptop L : 1250px and up
+@media (min-width: 1250px) {
+    .notice{
+        .school-updates{
+            position: absolute;
+            height: 14rem;
+            
+            top: 6rem;
+            padding-left: 3rem;
+            padding-right: 0rem;
+            marquee{
+                height: 14rem;
+                width: 18rem;
+
+                .singleNew{
+                    h3{
+                        font-size: 1.75rem;
+                        a{
+                            color: #b4b4b4;
+                            font-family: Daneehand;
+                        }
+                    }
+                    p{
+                        font-size: 1rem;
+                        color: white;
+                    }
+                    hr{
+                        width: 90%;
+                        background-color: white;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Laptop L : 1440px and up
+@media (min-width: 1440px) {
+    .notice{
+        .school-updates{
+            position: absolute;
+            height: 14rem;
+            
+            top: 6rem;
+            padding-left: 4rem;
+            padding-right: 0rem;
+            marquee{
+                height: 14rem;
+                width: 18rem;
+
+                .singleNew{
+                    h3{
+                        font-size: 1.75rem;
+                        a{
+                            color: #b4b4b4;
+                            font-family: Daneehand;
+                        }
+                    }
+                    p{
+                        font-size: 1rem;
+                        color: white;
+                    }
+                    hr{
+                        width: 90%;
+                        background-color: white;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Laptop L : 1500px and up
+@media (min-width: 1500px) {
+}
+
+// 4K : 2560px and up
+@media (min-width: 2560px) {
+}

@@ -2,17 +2,62 @@
 @import "headingBar";
 @import "navbar";
 @import "slider";
-
+@import "paragraphBlock";
+@import "newHeadingBlock";
+@import "birthdayWish";
+@import "notice";
+@import "contact";
+@import "map";
 
 .header-top-design {
-  background-color: #f6f7ed;
-  background-image: url(../img/header_top_design.png);
-  background-repeat: repeat-x;
+	background-color: #f6f7ed;
+	background-image: url(../img/header_top_design.png);
+	background-repeat: repeat-x;
 }
+
+.header-top-design-noColor {
+	background-image: url(../img/header_top_design.png);
+	background-repeat: repeat-x;
+}
+
+.header-top-design-noColor-rotated {
+	background-image: url(../img/header_top_design.png);
+	background-repeat: repeat-x;
+	transform: rotate(180deg);
+}
+
 .slider-top-design {
-  background-image: url(../img/slider_bottom.png);
-  background-repeat: repeat-x;
-  position: relative;
-  margin-top: -5px;
-  z-index: 999;
+	background-image: url(../img/slider_bottom.png);
+	background-repeat: repeat-x;
+	position: relative;
+	margin-top: -5px;
+	z-index: 999;
+}
+body {
+	background-image: url(../img/page.jpg);
+}
+.woodBlock {
+	background-image: url(../img/wood.jpg);
+	background-repeat: repeat-y;
+	background-size: 100%;
+}
+
+.buttom-design {
+	background-image: url(../img/buttom_design.png);
+	background-repeat: repeat-x;
+}
+
+.pencilImg{
+	width: 100%;
+	position: relative;
+	bottom: 1rem;
+	z-index: -10;
+	border-bottom: 5px #9a0000 solid;
+}
+.copyRight{
+	padding: 1rem;
+	background-color: #572828;
+	h6{
+		color: white;
+	}
 }
