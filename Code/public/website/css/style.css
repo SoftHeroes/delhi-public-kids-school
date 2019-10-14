@@ -519,6 +519,32 @@
   }
 }
 
+.serviceBlock {
+  padding: 3rem;
+  padding-top: 0rem;
+}
+
+.serviceBlock .text-primary {
+  color: #9a0000 !important;
+}
+
+.serviceBlock h4 {
+  padding-top: 1rem;
+}
+
+.serviceBlock a {
+  color: black;
+  -webkit-transition: -webkit-transform .5s;
+  transition: -webkit-transform .5s;
+  transition: transform .5s;
+  transition: transform .5s, -webkit-transform .5s;
+}
+
+.serviceBlock a:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
 .header-top-design {
   background-color: #f6f7ed;
   background-image: url(../img/header_top_design.png);
