@@ -1,18 +1,69 @@
-.serviceBlock{
-    padding: 3rem;
-    padding-top: 0rem;
+// Mobile S : 320px and up
+@media (min-width: 320px) {
+    .serviceBlock{
 
-    .text-primary{
-        color: #9a0000 !important;
-    }
-    h4{
-        padding-top: 1rem;
-    }
-    a{
-        color: black;
-        transition: transform .5s;
-        &:hover{
-            transform: scale(1.05);
+        .text-primary{
+            color: #9a0000 !important;
+        }
+        h4{
+            padding-top: 1rem;
+            font-family: 'Roboto Slab', serif;
+        }
+        a{
+            padding: 3rem;
+            padding-top: 0.25rem;
+            color: black;
+            transition: transform .5s;
+            &:hover{
+                transform: scale(1.05);
+            }
         }
     }
+}
+
+// Mobile M : 375px and up
+@media (min-width: 375px) {
+}
+
+// Mobile L : 425px and up
+@media (min-width: 425px) {
+}
+
+// Tablets : 768px and up
+@media (min-width: 768px) {
+
+}
+
+// Laptop : 1024px and up
+@media (min-width: 1024px) {
+    .serviceBlock{
+
+        .text-primary{
+            color: #9a0000 !important;
+        }
+        h4{
+            padding-top: 1rem;
+        }
+        a{
+            padding: 3rem;
+            padding-top: 0rem;
+            color: black;
+            transition: transform .5s;
+            &:hover{
+                transform: scale(1.05);
+            }
+        }
+    }
+}
+
+// Laptop L : 1440px and up
+@media (min-width: 1440px) {
+}
+
+// Laptop L : 1500px and up
+@media (min-width: 1500px) {
+}
+
+// 4K : 2560px and up
+@media (min-width: 2560px) {
 }

@@ -17,7 +17,7 @@
                 <img class="img-fluid" src="{{asset('/img/sliders/'.$sliders[$i]->imageName) }}">
                 @if ( !is_null($sliders[$i]->title) && trim($sliders[$i]->title) != "" )
                 <div class="carousel-caption">
-                    <h3>{{$sliders[$i]->title}}</h3>
+                    <h3 class="Display">{{$sliders[$i]->title}}</h3>
                 </div>
                 @endif
             </div>

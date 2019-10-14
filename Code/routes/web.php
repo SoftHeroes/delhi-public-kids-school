@@ -12,4 +12,8 @@
 */
 Route::get('/',function () {
     return view('website/home');
-});
+})->name('vHome');
+
+Route::get('/feesPay',function () {
+    return view('website/feesPay');
+})->name('vFeesPay');

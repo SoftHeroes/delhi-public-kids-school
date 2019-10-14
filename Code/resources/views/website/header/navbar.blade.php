@@ -7,38 +7,22 @@
     <div class="collapse navbar-collapse" id="collapsibleNavId">
         <ul class="navbar-nav mx-auto mt-2 mt-lg-0">
             <li class="nav-item">
-                <a class="nav-link" href="#">Home</a>
+                <a class="nav-link" href="{!! route('vHome') !!}">Home</a>
             </li>
 
-            <li class="nav-item dropdown pr-3 pl-3">
-                <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About us</a>
-                <div class="dropdown-menu" aria-labelledby="dropdownId">
-                    <a class="dropdown-item" href="about.html">About School</a>
-                    <a class="dropdown-item" href="PrinMgs.html">Principal Message</a>
-                    <a class="dropdown-item" href="Activities.html">Activities</a>
-                    <a class="dropdown-item" href="Mission.html">Our Mission</a>
-                </div>
+            <li class="nav-item dropdown pr-md-1 pl-md-1 pr-lg-3 pl-lg-3">
+                <a class="nav-link" href="{!! route('vHome') !!}">Principal Message</a>
             </li>
 
-            <li class="nav-item dropdown pr-3 pl-3">
+            <li class="nav-item dropdown pr-md-1 pl-md-1 pr-lg-3 pl-lg-3">
                 <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Academics</a>
                 <div class="dropdown-menu" aria-labelledby="dropdownId">
-                    <a class="dropdown-item" href="rules.html">Rules of School</a>
-                    <a class="dropdown-item" href="Fees.html">Fee Rules</a>
-                    <a class="dropdown-item" href="school.html">School Timing</a>
-                    <a class="dropdown-item" href="curriculam.html">Curriculam</a>
+                    <a class="dropdown-item" href="rules.html">Week schedule</a>
+                    <a class="dropdown-item" href="Fees.html">Homework</a>
                 </div>
             </li>
 
-            <li class="nav-item dropdown pr-3 pl-3">
-                <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Facilities</a>
-                <div class="dropdown-menu" aria-labelledby="dropdownId">
-                    <a class="dropdown-item" href="Academicf.html">Academic Facilities</a>
-                    <a class="dropdown-item" href="Extra.html">Extra Curricular</a>
-                </div>
-            </li>
-
-            <li class="nav-item dropdown pr-3 pl-3">
+            <li class="nav-item dropdown pr-md-1 pl-md-1 pr-lg-3 pl-lg-3">
                 <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Gallery</a>
                 <div class="dropdown-menu" aria-labelledby="dropdownId">
                     <a class="dropdown-item" href="#">Image Gallery</a>
@@ -50,6 +34,9 @@
                 <a class="nav-link" href="#">Admission Form</a>
             </li>
 
+            <li class="nav-item">
+                <a class="nav-link" href="#">Contact us</a>
+            </li>
         </ul>
     </div>
 </nav>

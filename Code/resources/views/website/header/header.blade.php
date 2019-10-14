@@ -6,7 +6,7 @@
 <div class="container-fluid headingBar">
     <div class="row">
         <div class="col-6 col-md-3 align-self-center logo">
-            <a href="index.html">
+            <a href="{!! route('vHome') !!}">
                 <img src="{{ asset('website/img/logo.png') }}" alt="">
             </a>
         </div>

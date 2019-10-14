@@ -42,27 +42,27 @@ $PRSubTitle = 'Delhi Public Kids School is India’s fast-growing ISO 9001-2008 
 
 				</div>
 			</div>
-			<div class="row serviceBlock text-center">
-				<a href="#" class="col-md-4">
+			<div class="row serviceBlock text-center justify-content-md-center">
+				<a href="#" class="col-sm-4 col-md-6 col-lg-4">
 					<span class="fa-stack fa-4x">
 					<i class="fas fa-circle fa-stack-2x text-primary"></i>
 					<i class="fas fa-image fa-stack-1x fa-inverse"></i>
 					</span>
 					<h4>Image Gallery</h4>
 				</a>
-				<a href="#" class="col-md-4">
+				<a href="#" class="col-sm-4 col-md-6 col-lg-4">
 					<span class="fa-stack fa-4x">
 					<i class="fas fa-circle fa-stack-2x text-primary"></i>
 					<i class="fas fa-film fa-stack-1x fa-inverse"></i>
 					</span>
 					<h4>Video Gallery</h4>
 				</a>
-				<a href="#" class="col-md-4">
+				<a href="{!! route('vFeesPay') !!}" target="_blank" class="col-sm-4 col-md-6 col-lg-4">
 					<span class="fa-stack fa-4x">
 					<i class="fas fa-circle fa-stack-2x text-primary"></i>
-					<i class="fab fa-wpforms fa-stack-1x fa-inverse"></i>
+					<i class="fas fa-credit-card fa-stack-1x fa-inverse"></i>
 					</span>
-					<h4>Admission Form</h4>
+					<h4>Pay fees</h4>
 				</a>
 			</div>
 		</div>
