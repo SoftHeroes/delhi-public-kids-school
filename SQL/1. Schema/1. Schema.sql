@@ -95,4 +95,57 @@ ENGINE = INNODB,
 CHARACTER SET utf8,
 COLLATE utf8_general_ci;
 
+DROP TABLE IF EXISTS homework;
+CREATE TABLE homework (
+	uniqueID bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+	text varchar(255) DEFAULT NULL,
+  dateOfHomework DATE NOT NULL,
+	imageName varchar(255) DEFAULT NULL,
+  deletedAt DATETIME(6) DEFAULT NULL,
+	PRIMARY KEY (uniqueID)
+)
+ENGINE = INNODB,
+CHARACTER SET utf8,
+COLLATE utf8_general_ci;
+
+DROP TABLE IF EXISTS weekSchedule;
+CREATE TABLE weekSchedule (
+	uniqueID bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  weekNumber INT NOT NULL,
+  year INT NOT NULL,
+	imageName varchar(255) DEFAULT NULL,
+  deletedAt DATETIME(6) DEFAULT NULL,
+	PRIMARY KEY (uniqueID)
+)
+ENGINE = INNODB,
+CHARACTER SET utf8,
+COLLATE utf8_general_ci;
+
+DROP TABLE IF EXISTS principalMessage;
+CREATE TABLE principalMessage (
+	uniqueID bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  title varchar(255) NOT NULL,
+  subtitle INT NOT NULL,
+  createDate DATETIME(6) DEFAULT CURRENT_TIMESTAMP(),
+  deletedAt DATETIME(6) DEFAULT NULL,
+	PRIMARY KEY (uniqueID)
+)
+ENGINE = INNODB,
+CHARACTER SET utf8,
+COLLATE utf8_general_ci;
+
+DROP TABLE IF EXISTS student;
+CREATE TABLE student (
+	uniqueID bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+	fname varchar(255) NOT NULL,
+  lname varchar(255) NOT NULL,
+  dateOfBirth DATE NOT NULL,
+	imageName varchar(255) NOT NULL,
+  deletedAt DATETIME(6) DEFAULT NULL,
+	PRIMARY KEY (uniqueID)
+)
+ENGINE = INNODB,
+CHARACTER SET utf8,
+COLLATE utf8_general_ci;
+
 SET FOREIGN_KEY_CHECKS = 1;

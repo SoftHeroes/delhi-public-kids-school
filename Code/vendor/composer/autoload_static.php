@@ -103,6 +103,7 @@ class ComposerStaticInit8a7c6ba52e91471e558e8945198143a9
         ),
         'J' => 
         array (
+            'Jedkirby\\' => 9,
             'JakubOnderka\\PhpConsoleHighlighter\\' => 35,
             'JakubOnderka\\PhpConsoleColor\\' => 29,
         ),
@@ -137,6 +138,7 @@ class ComposerStaticInit8a7c6ba52e91471e558e8945198143a9
         array (
             'Cron\\' => 5,
             'Carbon\\' => 7,
+            'Calendarific\\' => 13,
         ),
         'B' => 
         array (
@@ -311,6 +313,10 @@ class ComposerStaticInit8a7c6ba52e91471e558e8945198143a9
         array (
             0 => __DIR__ . '/..' . '/laravel/tinker/src',
         ),
+        'Jedkirby\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/jedkirby/json/src',
+        ),
         'JakubOnderka\\PhpConsoleHighlighter\\' => 
         array (
             0 => __DIR__ . '/..' . '/jakub-onderka/php-console-highlighter/src',
@@ -375,6 +381,10 @@ class ComposerStaticInit8a7c6ba52e91471e558e8945198143a9
         array (
             0 => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon',
         ),
+        'Calendarific\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/calendarific/php-calendarific/src',
+        ),
         'BeyondCode\\DumpServer\\' => 
         array (
             0 => __DIR__ . '/..' . '/beyondcode/laravel-dump-server/src',
@@ -415,6 +425,9 @@ class ComposerStaticInit8a7c6ba52e91471e558e8945198143a9
         'App\\Http\\Controllers\\Auth\\ResetPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ResetPasswordController.php',
         'App\\Http\\Controllers\\Auth\\VerificationController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/VerificationController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
+        'App\\Http\\Controllers\\dashboard\\Login' => __DIR__ . '/../..' . '/app/Http/Controllers/dashboard/Login.php',
+        'App\\Http\\Controllers\\dashboard\\SlidersManagement' => __DIR__ . '/../..' . '/app/Http/Controllers/dashboard/SlidersManagement.php',
+        'App\\Http\\Controllers\\dashboard\\forgetPassword' => __DIR__ . '/../..' . '/app/Http/Controllers/dashboard/forgetPassword.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\CheckForMaintenanceMode' => __DIR__ . '/../..' . '/app/Http/Middleware/CheckForMaintenanceMode.php',
@@ -423,16 +436,31 @@ class ComposerStaticInit8a7c6ba52e91471e558e8945198143a9
         'App\\Http\\Middleware\\TrimStrings' => __DIR__ . '/../..' . '/app/Http/Middleware/TrimStrings.php',
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
+        'App\\Http\\Middleware\\dashboard\\Auth' => __DIR__ . '/../..' . '/app/Http/Middleware/dashboard/Auth.php',
+        'App\\Http\\Middleware\\dashboard\\Login' => __DIR__ . '/../..' . '/app/Http/Middleware/dashboard/Login.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
         'App\\Providers\\EventServiceProvider' => __DIR__ . '/../..' . '/app/Providers/EventServiceProvider.php',
+        'App\\Providers\\PasswordRecovery' => __DIR__ . '/../..' . '/app/Providers/PasswordRecovery.php',
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
+        'App\\Providers\\eventOfDay\\event' => __DIR__ . '/../..' . '/app/Providers/eventOfDay/event.php',
         'App\\User' => __DIR__ . '/../..' . '/app/User.php',
         'BeyondCode\\DumpServer\\DumpServerCommand' => __DIR__ . '/..' . '/beyondcode/laravel-dump-server/src/DumpServerCommand.php',
         'BeyondCode\\DumpServer\\DumpServerServiceProvider' => __DIR__ . '/..' . '/beyondcode/laravel-dump-server/src/DumpServerServiceProvider.php',
         'BeyondCode\\DumpServer\\Dumper' => __DIR__ . '/..' . '/beyondcode/laravel-dump-server/src/Dumper.php',
         'BeyondCode\\DumpServer\\RequestContextProvider' => __DIR__ . '/..' . '/beyondcode/laravel-dump-server/src/RequestContextProvider.php',
+        'Calendarific\\Api\\Client\\Client' => __DIR__ . '/..' . '/calendarific/php-calendarific/src/Api/Client/Client.php',
+        'Calendarific\\Api\\Client\\ClientInterface' => __DIR__ . '/..' . '/calendarific/php-calendarific/src/Api/Client/ClientInterface.php',
+        'Calendarific\\Api\\Exception\\AbstractException' => __DIR__ . '/..' . '/calendarific/php-calendarific/src/Api/Exception/AbstractException.php',
+        'Calendarific\\Api\\Exception\\CountryException' => __DIR__ . '/..' . '/calendarific/php-calendarific/src/Api/Exception/CountryException.php',
+        'Calendarific\\Api\\Exception\\RequestException' => __DIR__ . '/..' . '/calendarific/php-calendarific/src/Api/Exception/RequestException.php',
+        'Calendarific\\Api\\Exception\\TypeException' => __DIR__ . '/..' . '/calendarific/php-calendarific/src/Api/Exception/TypeException.php',
+        'Calendarific\\Api\\Request\\Helper\\Country' => __DIR__ . '/..' . '/calendarific/php-calendarific/src/Api/Request/Helper/Country.php',
+        'Calendarific\\Api\\Request\\Helper\\Query' => __DIR__ . '/..' . '/calendarific/php-calendarific/src/Api/Request/Helper/Query.php',
+        'Calendarific\\Api\\Request\\Helper\\Type' => __DIR__ . '/..' . '/calendarific/php-calendarific/src/Api/Request/Helper/Type.php',
+        'Calendarific\\Api\\Request\\Request' => __DIR__ . '/..' . '/calendarific/php-calendarific/src/Api/Request/Request.php',
+        'Calendarific\\Calendarific' => __DIR__ . '/..' . '/calendarific/php-calendarific/src/Calendarific.php',
         'Carbon\\Carbon' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Carbon.php',
         'Carbon\\CarbonImmutable' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/CarbonImmutable.php',
         'Carbon\\CarbonInterface' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/CarbonInterface.php',
@@ -2009,6 +2037,7 @@ class ComposerStaticInit8a7c6ba52e91471e558e8945198143a9
         'JakubOnderka\\PhpConsoleColor\\ConsoleColor' => __DIR__ . '/..' . '/jakub-onderka/php-console-color/src/ConsoleColor.php',
         'JakubOnderka\\PhpConsoleColor\\InvalidStyleException' => __DIR__ . '/..' . '/jakub-onderka/php-console-color/src/InvalidStyleException.php',
         'JakubOnderka\\PhpConsoleHighlighter\\Highlighter' => __DIR__ . '/..' . '/jakub-onderka/php-console-highlighter/src/Highlighter.php',
+        'Jedkirby\\Json' => __DIR__ . '/..' . '/jedkirby/json/src/Json.php',
         'JsonException' => __DIR__ . '/..' . '/symfony/polyfill-php73/Resources/stubs/JsonException.php',
         'Laravel\\Tinker\\ClassAliasAutoloader' => __DIR__ . '/..' . '/laravel/tinker/src/ClassAliasAutoloader.php',
         'Laravel\\Tinker\\Console\\TinkerCommand' => __DIR__ . '/..' . '/laravel/tinker/src/Console/TinkerCommand.php',

@@ -28,3 +28,27 @@ INSERT INTO lookUp (code,name,languageID,category)
 WHERE NOT EXISTS (
     SELECT category,code,name,languageID FROM lookUp WHERE code = 2 AND name = 'POST' AND languageID = 1 AND category = 'httpMethods'
 ) LIMIT 1;
+
+INSERT INTO lookUp (code,name,languageID,category)
+  SELECT * FROM (SELECT 1 AS code,'Pre-Nursery (Play Group)',1 AS languageID,'classes') AS tmp
+WHERE NOT EXISTS (
+    SELECT category,code,name,languageID FROM lookUp WHERE code = 1 AND name = 'Pre-Nursery (Play Group)' AND languageID = 1 AND category = 'classes'
+) LIMIT 1;
+
+INSERT INTO lookUp (code,name,languageID,category)
+  SELECT * FROM (SELECT 2 AS code,'Nursery',1 AS languageID,'classes') AS tmp
+WHERE NOT EXISTS (
+    SELECT category,code,name,languageID FROM lookUp WHERE code = 2 AND name = 'Nursery' AND languageID = 1 AND category = 'classes'
+) LIMIT 1;
+
+INSERT INTO lookUp (code,name,languageID,category)
+  SELECT * FROM (SELECT 3 AS code,'KG-1',1 AS languageID,'classes') AS tmp
+WHERE NOT EXISTS (
+    SELECT category,code,name,languageID FROM lookUp WHERE code = 3 AND name = 'KG-1' AND languageID = 1 AND category = 'classes'
+) LIMIT 1;
+
+INSERT INTO lookUp (code,name,languageID,category)
+  SELECT * FROM (SELECT 4 AS code,'KG-2',1 AS languageID,'classes') AS tmp
+WHERE NOT EXISTS (
+    SELECT category,code,name,languageID FROM lookUp WHERE code = 4 AND name = 'KG-2' AND languageID = 1 AND category = 'classes'
+) LIMIT 1;

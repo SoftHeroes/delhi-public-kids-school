@@ -31,6 +31,10 @@
             </li>
 
             <li class="nav-item">
+                <a class="nav-link" href="{!! route('vFeesPay') !!}" target="_blank">Pay Fees</a>
+            </li>
+
+            <li class="nav-item">
                 <a class="nav-link" href="#">Admission Form</a>
             </li>
 
