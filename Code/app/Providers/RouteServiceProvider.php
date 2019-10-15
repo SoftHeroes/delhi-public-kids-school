@@ -43,9 +43,11 @@ class RouteServiceProvider extends ServiceProvider
 
         $this->mapForgetPasswordRoutes();
 
+        $this->mapDashboardRoutes();
+
         $this->mapSlidersManagementRoutes();
 
-        $this->mapDashboardRoutes();
+        $this->mapHomeworkManagementRoutes();
 
     }
 
@@ -91,16 +93,22 @@ class RouteServiceProvider extends ServiceProvider
             ->namespace($this->namespace)
             ->group(base_path('routes/dashboard/forgetPassword.php'));
     }
+    protected function mapDashboardRoutes()
+    {
+        Route::middleware('web')
+            ->namespace($this->namespace)
+            ->group(base_path('routes/dashboard/dashboard.php'));
+    }
     protected function mapSlidersManagementRoutes()
     {
         Route::middleware('web')
             ->namespace($this->namespace)
             ->group(base_path('routes/dashboard/slidersManagement.php'));
     }
-    protected function mapDashboardRoutes()
+    protected function mapHomeworkManagementRoutes()
     {
         Route::middleware('web')
             ->namespace($this->namespace)
-            ->group(base_path('routes/dashboard/dashboard.php'));
+            ->group(base_path('routes/dashboard/homeworkManagement.php'));
     }
 }

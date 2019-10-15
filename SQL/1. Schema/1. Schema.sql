@@ -95,12 +95,14 @@ ENGINE = INNODB,
 CHARACTER SET utf8,
 COLLATE utf8_general_ci;
 
-DROP TABLE IF EXISTS homework;
-CREATE TABLE homework (
+DROP TABLE IF EXISTS homeworks;
+CREATE TABLE homeworks (
 	uniqueID bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  class varchar(255) NOT NULL,
 	text varchar(255) DEFAULT NULL,
   dateOfHomework DATE NOT NULL,
 	imageName varchar(255) DEFAULT NULL,
+  createDate DATETIME(6) DEFAULT CURRENT_TIMESTAMP(),
   deletedAt DATETIME(6) DEFAULT NULL,
 	PRIMARY KEY (uniqueID)
 )
@@ -108,8 +110,8 @@ ENGINE = INNODB,
 CHARACTER SET utf8,
 COLLATE utf8_general_ci;
 
-DROP TABLE IF EXISTS weekSchedule;
-CREATE TABLE weekSchedule (
+DROP TABLE IF EXISTS weekSchedules;
+CREATE TABLE weekSchedules (
 	uniqueID bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
   weekNumber INT NOT NULL,
   year INT NOT NULL,
@@ -121,8 +123,8 @@ ENGINE = INNODB,
 CHARACTER SET utf8,
 COLLATE utf8_general_ci;
 
-DROP TABLE IF EXISTS principalMessage;
-CREATE TABLE principalMessage (
+DROP TABLE IF EXISTS principalMessages;
+CREATE TABLE principalMessages (
 	uniqueID bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
   title varchar(255) NOT NULL,
   subtitle INT NOT NULL,
@@ -134,8 +136,8 @@ ENGINE = INNODB,
 CHARACTER SET utf8,
 COLLATE utf8_general_ci;
 
-DROP TABLE IF EXISTS student;
-CREATE TABLE student (
+DROP TABLE IF EXISTS students;
+CREATE TABLE students (
 	uniqueID bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
 	fname varchar(255) NOT NULL,
   lname varchar(255) NOT NULL,
