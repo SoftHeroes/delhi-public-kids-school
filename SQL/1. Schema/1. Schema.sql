@@ -129,8 +129,8 @@ DROP TABLE IF EXISTS principalMessages;
 CREATE TABLE principalMessages (
 	uniqueID bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
   title varchar(255) NOT NULL,
-  subtitle INT NOT NULL,
-  createDate DATETIME(6) DEFAULT CURRENT_TIMESTAMP(),
+  subtitle varchar(5000) NOT NULL,
+  createDate DATE DEFAULT CURRENT_DATE(),
   deletedAt DATETIME(6) DEFAULT NULL,
 	PRIMARY KEY (uniqueID)
 )

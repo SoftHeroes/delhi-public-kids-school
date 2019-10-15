@@ -5,6 +5,7 @@
     $slidersManagment = array('vCreateSlider','vViewSliders','vDeletedSliders');
     $homeworkManagment = array('vAddHomework','vViewHomeworks','vDeletedHomeworks');
     $weekSchedulesManagment = array('vAddWeekSchedule','vViewWeekSchedules','vDeletedWeekSchedules');
+    $principalMessagesManagment = array('vAddPrincipalMessage','vViewPrincipalMessages','vDeletedPrincipalMessages');
 	@endphp
     <li class="app-menu__item {{$routeName == 'vDashboard' ? 'active' : ''}}"><a href="{!!route('vDashboard')!!}"><i class="fas fa-tachometer-alt"></i><span class="app-menu__label">Welcome</span></a></li>
 
@@ -37,6 +38,16 @@
 			<li><a class="treeview-item {{$routeName == 'vAddWeekSchedule' ? 'active' : ''}}" href="{!! route('vAddWeekSchedule') !!}"><i class="icon fa fa-circle-o"></i><span class="app-menu_sub_item">Add Week Schedule<span></a></li>
 			<li><a class="treeview-item {{$routeName == 'vViewWeekSchedules' ? 'active' : ''}}" href="{!! route('vViewWeekSchedules') !!}"><i class="icon fa fa-circle-o"></i><span class="app-menu_sub_item">View Week Schedule<span></a></li>
 			<li><a class="treeview-item {{$routeName == 'vDeletedWeekSchedules' ? 'active' : ''}}" href="{!! route('vDeletedWeekSchedules') !!}"><i class="icon fa fa-circle-o"></i><span class="app-menu_sub_item">Deleted Week Schedule<span></a></li>
+		</ul>
+    </li>
+
+    {{-- Principal Messages Managment --}}
+	<li class="treeview {{ in_array($routeName,$principalMessagesManagment) ? 'is-expanded' : ''}}">
+		<a class="app-menu__item" href="../search" data-toggle="treeview"><i class="fas fa-sticky-note"></i><span class="app-menu__label">Principal Messages </span><i class="treeview-indicator fa fa-angle-right"></i></a>
+		<ul class="treeview-menu">
+			<li><a class="treeview-item {{$routeName == 'vAddPrincipalMessage' ? 'active' : ''}}" href="{!! route('vAddPrincipalMessage') !!}"><i class="icon fa fa-circle-o"></i><span class="app-menu_sub_item">Add Principal Messages<span></a></li>
+			<li><a class="treeview-item {{$routeName == 'vViewPrincipalMessages' ? 'active' : ''}}" href="{!! route('vViewPrincipalMessages') !!}"><i class="icon fa fa-circle-o"></i><span class="app-menu_sub_item">View Principal Messages<span></a></li>
+			<li><a class="treeview-item {{$routeName == 'vDeletedPrincipalMessages' ? 'active' : ''}}" href="{!! route('vDeletedPrincipalMessages') !!}"><i class="icon fa fa-circle-o"></i><span class="app-menu_sub_item">Deleted Principal Messages<span></a></li>
 		</ul>
     </li>
 </ul>

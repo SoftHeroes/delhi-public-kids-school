@@ -51,6 +51,8 @@ class RouteServiceProvider extends ServiceProvider
 
         $this->mapWeekScheduleManagementRoutes();
 
+        $this->mapPrincipalMessagesManagementRoutes();
+
     }
 
     /**
@@ -118,5 +120,11 @@ class RouteServiceProvider extends ServiceProvider
         Route::middleware('web')
             ->namespace($this->namespace)
             ->group(base_path('routes/dashboard/weekScheduleManagement.php'));
+    }
+    protected function mapPrincipalMessagesManagementRoutes()
+    {
+        Route::middleware('web')
+            ->namespace($this->namespace)
+            ->group(base_path('routes/dashboard/principalMessagesManagement.php'));
     }
 }
