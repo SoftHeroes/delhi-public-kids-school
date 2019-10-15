@@ -34,6 +34,7 @@
 					<thead>
 						<tr>
                             <th>Created Date</th>
+                            <th>Class</th>
                             <th>Homework Date</th>
                             <th>Homework Description</th>
 							<th>Image</th>
@@ -45,6 +46,7 @@
                         @foreach($homeworks as $currentHomework)
 						<tr class="text-center">
                             <td>{{substr($currentHomework->createDate,0,10)}}</td>
+                            <td>{{$currentHomework->class}}</td>
                             <td>{{$currentHomework->dateOfHomework}}</td>
                             <td>{{$currentHomework->text}}</td>
 							<td class="previewImg">

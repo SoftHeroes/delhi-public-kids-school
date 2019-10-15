@@ -27,6 +27,9 @@
 		<!-- Tempus Dominus CDN-->
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha14/css/tempusdominus-bootstrap-4.min.css" />
 
+        {{-- jQuery CDN --}}
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/flick/jquery-ui.css">
+
         {{-- My Start --}}
         {{-- Justified --}}
         <link rel="stylesheet" type="text/css" href="{{ asset('plugins/Justified/css/jquery.justified.css') }}">
@@ -76,9 +79,14 @@
         <script src="https://kit.fontawesome.com/c645529b0c.js" SameSite="None" ></script>
 
 		<!-- moment for language support in Tempus Dominus CDN-->
-		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.js"></script>
+
 		<!-- Tempus Dominus CDN-->
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha14/js/tempusdominus-bootstrap-4.min.js"></script>
+
+        {{-- jQuery CDN --}}
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="http://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
 
         {{-- Create Collage --}}
         <script src="{{asset('js/createCollage/fileUpload.js')}}"></script>
@@ -90,5 +98,13 @@
 
         {{-- Form Validation --}}
         <script src="{{asset('js/formValidation.js')}}"></script>
+
+        {{-- Week Picker --}}
+        <script src="{{asset('plugins/weekPicker/js/jquery.weekpicker.js')}}"></script>
+        <script>
+            var elemrntRef = $( "#weekPicker" );
+            if(elemrntRef)
+                elemrntRef.weekpicker();
+        </script>
 	</body>
 </html>

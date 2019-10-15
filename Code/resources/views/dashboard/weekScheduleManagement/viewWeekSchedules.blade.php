@@ -2,12 +2,12 @@
 @section('content')
 <div class="app-title">
 	<div>
-		<h1><i class="fas fa-table"></i> Deleted Homeworks</h1>
+		<h1><i class="fas fa-table"></i> View Week Schedules</h1>
 	</div>
 	<ul class="app-breadcrumb breadcrumb side">
 		<li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
-		<li class="breadcrumb-item">Homeworks Management</li>
-		<li class="breadcrumb-item active">Deleted Homeworks</li>
+		<li class="breadcrumb-item">Week Schedules Management</li>
+		<li class="breadcrumb-item active">View Week Schedules</li>
 	</ul>
 </div>
 <div class="row">
@@ -33,30 +33,29 @@
 				<table class="table table-hover table-bordered" id="myTable">
 					<thead>
 						<tr>
-                            <th>Created Date</th>
-                            <th>Class</th>
-                            <th>Homework Date</th>
-                            <th>Homework Description</th>
+                            <th>Unique ID</th>
+                            <th>class</th>
+                            <th>Week</th>
+                            <th>Description</th>
 							<th>Image</th>
 							<th>Actions</th>
 						</tr>
 					</thead>
 					<tbody>
-                        @isset($homeworks)
-                        @foreach($homeworks as $currentHomework)
+                        @isset($weekSchedules)
+                        @foreach($weekSchedules as $currentWeekSchedules)
 						<tr class="text-center">
-                            <td>{{substr($currentHomework->createDate,0,10)}}</td>
-                            <td>{{$currentHomework->class}}</td>
-                            <td>{{$currentHomework->dateOfHomework}}</td>
-                            <td>{{$currentHomework->text}}</td>
+                            <td>{{$currentWeekSchedules->uniqueID}}</td>
+                            <td>{{$currentWeekSchedules->class}}</td>
+                            <td>{{$currentWeekSchedules->startDate.' - '.$currentWeekSchedules->endDate}}</td>
+                            <td>{{$currentWeekSchedules->text}}</td>
 							<td class="previewImg">
-                                @if ( !is_null($currentHomework->imageName))
-                                    <img class="table-img" src={{ asset("img/homework/".$currentHomework->imageName) }}>
+                                @if ( !is_null($currentWeekSchedules->imageName))
+                                    <img class="table-img" src={{ asset("img/weekSchedule/".$currentWeekSchedules->imageName) }}>
                                 @endif
                             </td>
 							<td>
-                                <a class="btn btn-primary btn-view" href="{!! route('restoreHomework',$currentHomework->uniqueID) !!}">Restore</a>
-                                <a class="btn btn-primary btn-delete" href="{!! route('deleteHomeworkPermanently',$currentHomework->uniqueID) !!}">Delete</a>
+								<a class="btn btn-primary btn-delete" href="{!! route('deleteWeekSchedule',$currentWeekSchedules->uniqueID) !!}">Delete</a>
 							</td>
                         </tr>
                         @endforeach

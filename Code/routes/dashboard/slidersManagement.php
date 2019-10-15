@@ -16,9 +16,7 @@ Route::get('/createSlider',['middleware'=>'dashboard_auth',function () {
 }])->name('vCreateSlider');
 
 Route::get('/viewSliders',['middleware'=>'dashboard_auth',function () {
-
     $sliders = DB::select('select * from sliders where deletedAt IS NULL');
-
     return view('dashboard/slidersManagement/viewSliders',compact('sliders'));
 }])->name('vViewSliders');
 

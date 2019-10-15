@@ -113,8 +113,10 @@ COLLATE utf8_general_ci;
 DROP TABLE IF EXISTS weekSchedules;
 CREATE TABLE weekSchedules (
 	uniqueID bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
-  weekNumber INT NOT NULL,
-  year INT NOT NULL,
+  class varchar(255) NOT NULL,
+	text varchar(255) DEFAULT NULL,
+  startDate date NOT NULL,
+  endDate date NOT NULL,
 	imageName varchar(255) DEFAULT NULL,
   deletedAt DATETIME(6) DEFAULT NULL,
 	PRIMARY KEY (uniqueID)
