@@ -1,0 +1,34 @@
+// Mobile L : 320px and up
+@media (min-width: 320px) {
+    .tabMenu{
+
+        .nav-item{
+            display: none !important;
+            .nav-link{
+                color: #9a0000!important;
+            }
+        }
+        .mobileDropdown{
+            display: block !important;
+        }
+    }
+}
+
+
+// Tablets : 768px and up
+@media (min-width: 768px) {
+    .tabMenu{
+        .nav-item{
+            display: block !important;
+            .nav-link{
+                color: #9a0000!important;
+            }
+        }
+        .mobileDropdown{
+            display: none !important;
+            .dropdown-toggle::after {
+                display: none !important;
+            }
+        }
+    }
+}

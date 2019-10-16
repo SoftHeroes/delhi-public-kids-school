@@ -519,6 +519,56 @@
   }
 }
 
+@media (min-width: 320px) {
+  .tabMenu .nav-item {
+    display: none !important;
+  }
+  .tabMenu .nav-item .nav-link {
+    color: #9a0000 !important;
+  }
+  .tabMenu .mobileDropdown {
+    display: block !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .tabMenu .nav-item {
+    display: block !important;
+  }
+  .tabMenu .nav-item .nav-link {
+    color: #9a0000 !important;
+  }
+  .tabMenu .mobileDropdown {
+    display: none !important;
+  }
+  .tabMenu .mobileDropdown .dropdown-toggle::after {
+    display: none !important;
+  }
+}
+
+.tab-content .title {
+  padding-top: 2rem;
+  font-family: BassetBoldItalic;
+  font-size: 28px;
+  color: #9a0000;
+  font-weight: 800;
+}
+
+@media (min-width: 320px) {
+  .singleNoticeBlock {
+    padding: 1rem;
+    padding-bottom: 0rem;
+    padding-top: 2rem;
+  }
+  .singleNoticeBlock .postDate {
+    font-family: BassetBoldItalic;
+    color: #a19d9d;
+  }
+  .singleNoticeBlock hr {
+    height: 5px;
+  }
+}
+
 .header-top-design {
   background-color: #f6f7ed;
   background-image: url(../img/header_top_design.png);

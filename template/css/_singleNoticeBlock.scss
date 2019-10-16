@@ -1,0 +1,25 @@
+.tab-content{
+    .title{
+        padding-top: 2rem;
+        font-family: BassetBoldItalic;
+        font-size: 28px;
+        color: #9a0000;
+        font-weight: 800;
+    }
+}
+// Mobile S : 320px and up
+@media (min-width: 320px) {
+    .singleNoticeBlock{
+        padding: 1rem;
+        padding-bottom: 0rem;
+        padding-top: 2rem;
+
+        .postDate{
+            font-family: BassetBoldItalic;
+            color: #a19d9d;
+        }
+        hr{
+            height: 5px;
+        }
+    }
+}
