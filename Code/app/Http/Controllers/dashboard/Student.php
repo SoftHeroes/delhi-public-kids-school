@@ -16,7 +16,8 @@ class Student extends Controller
 
         $fname = trim($request->input('fname'));
         $lname = trim($request->input('lname'));
-        $studenDOB = (string)date("Y-m-d", strtotime(str_replace('/', '-', trim($request->input('StudentDate')))));
+
+        $studenDOB = (string)date("Y-m-d", strtotime(trim($request->input('StudentDate'))));
 
         if($files[0]->getError()){
             $error = ValidationException::withMessages(['Unable to upload file!']);
