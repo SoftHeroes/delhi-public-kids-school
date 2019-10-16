@@ -65,7 +65,7 @@
 
     {{-- Image Gallery Managment --}}
 	<li class="treeview {{ in_array($routeName,$imageGalleryManagment) ? 'is-expanded' : ''}}">
-		<a class="app-menu__item" href="../search" data-toggle="treeview"><i class="fas fa-user-graduate"></i><span class="app-menu__label">Image Gallery </span><i class="treeview-indicator fa fa-angle-right"></i></a>
+		<a class="app-menu__item" href="../search" data-toggle="treeview"><i class="fas fa-images"></i><span class="app-menu__label">Image Gallery </span><i class="treeview-indicator fa fa-angle-right"></i></a>
 		<ul class="treeview-menu">
 			<li><a class="treeview-item {{$routeName == 'vAddImageGallery' ? 'active' : ''}}" href="{!! route('vAddImageGallery') !!}"><i class="icon fa fa-circle-o"></i><span class="app-menu_sub_item">Add Image Gallery<span></a></li>
 			<li><a class="treeview-item {{$routeName == 'vViewImageGalleries' ? 'active' : ''}}" href="{!! route('vViewImageGalleries') !!}"><i class="icon fa fa-circle-o"></i><span class="app-menu_sub_item">View Image Galleries<span></a></li>
