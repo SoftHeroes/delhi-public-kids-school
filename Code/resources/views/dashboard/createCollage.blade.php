@@ -60,7 +60,8 @@
 						</div>
 					</div>
 					<div class="col-md-12 text-center">
-						<a href="#" class="button btn btn-primary" id="btn-download"><i class="fas fa-download"></i>&ensp;Download</a>
+                        <a href="#" class="button btn btn-primary" id="btn-download"><i class="fas fa-download"></i>&ensp;Download</a>&ensp;
+                        <a class="btn btn-secondary" href="https://www.photovisi.com/featured-facebook_cover" target="_blank"><i class="fa fa-fw fa-lg fa-times-circle"></i>Vist Here!</a>
 					</div>
 				</div>
 			</div>

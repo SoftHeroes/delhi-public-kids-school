@@ -37,7 +37,6 @@ class event extends ServiceProvider
             $month = (int)date('m');
             $year = (int)date("Y");
 
-            $day = 27;
             $CIApi = new Calendarific();
             $response = $CIApi->make('dff9ab173306cb7801d933644adcb65322e0b062','IN',$year,$month,$day)['response'];
 
