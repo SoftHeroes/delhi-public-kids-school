@@ -72,7 +72,9 @@ $PRSubTitle = 'Delhi Public Kids School is India’s fast-growing ISO 9001-2008 
 					@include('website.noticeBoard.noticeBoard')
 					@yield('noticeBoard')
 					@include('website.wishBlock.wishBlock')
-					@yield('wishBlock')
+                    @yield('wishBlock')
+                    @include('website.wishBlock.holidays')
+					@yield('holidays')
 				</div>
 			</div>
 		</div>
