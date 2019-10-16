@@ -13,31 +13,33 @@ function makeDroppable(element, callback) {
     input.addEventListener('change', function (e) {
         triggerCallback(e, callback);
     });
-    element.appendChild(input);
+    if(element){
+        element.appendChild(input);
 
-    element.addEventListener('dragover', function (e) {
-        e.preventDefault();
-        e.stopPropagation();
-        element.classList.add('dragover');
-    });
+        element.addEventListener('dragover', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            element.classList.add('dragover');
+        });
 
-    element.addEventListener('dragleave', function (e) {
-        e.preventDefault();
-        e.stopPropagation();
-        element.classList.remove('dragover');
-    });
+        element.addEventListener('dragleave', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            element.classList.remove('dragover');
+        });
 
-    element.addEventListener('drop', function (e) {
-        e.preventDefault();
-        e.stopPropagation();
-        element.classList.remove('dragover');
-        triggerCallback(e, callback);
-    });
+        element.addEventListener('drop', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            element.classList.remove('dragover');
+            triggerCallback(e, callback);
+        });
 
-    element.addEventListener('click', function () {
-        input.value = null;
-        input.click();
-    });
+        element.addEventListener('click', function () {
+            input.value = null;
+            input.click();
+        });
+    }
 }
 
 function triggerCallback(e, callback) {

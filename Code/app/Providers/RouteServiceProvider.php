@@ -53,6 +53,8 @@ class RouteServiceProvider extends ServiceProvider
 
         $this->mapPrincipalMessagesManagementRoutes();
 
+        $this->mapStudentManagementRoutes();
+
     }
 
     /**
@@ -127,4 +129,11 @@ class RouteServiceProvider extends ServiceProvider
             ->namespace($this->namespace)
             ->group(base_path('routes/dashboard/principalMessagesManagement.php'));
     }
+    protected function mapStudentManagementRoutes()
+    {
+        Route::middleware('web')
+            ->namespace($this->namespace)
+            ->group(base_path('routes/dashboard/studentManagement.php'));
+    }
+
 }
