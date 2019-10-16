@@ -1,3 +1,4 @@
+
 @section('footer')
 
 <div class="buttom-design">&nbsp;</div>
@@ -17,8 +18,9 @@
 						Behind Pradhan Mandapam Marriage Garden <br>
 						Hoshnagabad Road, Bhopal <br>
 						E-Mail : dpskidsbhopal@gmail.com <br>
-						Telephone : 0755-2418222, 7879136615 <br><br>
-						School Hours 7.00 AM -1.30 PM
+                        Telephone : 0755-2418222, 7879136615 <br><br>
+                        School Hours&nbsp;&nbsp;&nbsp;:&nbsp;7.00&nbsp;AM&nbsp;-&nbsp;3.00&nbsp;PM<br>
+                        Visiting Hours&nbsp;:&nbsp;7.00&nbsp;AM&nbsp;-&nbsp;7.00&nbsp;PM
 					</p>
 				</strong>
 			</div>

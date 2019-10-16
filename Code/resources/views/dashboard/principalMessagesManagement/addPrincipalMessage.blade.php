@@ -36,11 +36,11 @@
                 @endif
 				<form name="principalMessagesForm" class="row" action="{!! route('addPrincipalMessage') !!}" method="POST" >
                     {{csrf_field()}}
-					<div class="form-group col-md-6">
+					<div class="form-group col-12">
 						<label >Messages Title</label>
-						<input class="form-control" maxlength="255" name="title" type="text" placeholder="Silder Title" required>
+						<input class="form-control" maxlength="255" name="title" type="text" placeholder="" required>
                     </div>
-                    <div class="form-group col-6">
+                    <div class="form-group col-12">
                         <label for="exampleTextarea">Principal Messages</label>
                         <textarea class="form-control" maxlength="5000" name="subtitle" id="exampleTextarea" rows="4" required></textarea>
                     </div>

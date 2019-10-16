@@ -9,6 +9,7 @@ $PRSubTitle = 'Delhi Public Kids School is India’s fast-growing ISO 9001-2008 
 @include('website.paragraph.paragraph')
 @yield('paragraph')
 <!-- News heading -->
+<br><br>
 <div class="header-top-design-noColor">&nbsp;</div>
 <div class="newHeadingBlock">
 	<div class="newsheading text-center">Admission</div>

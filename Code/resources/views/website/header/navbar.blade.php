@@ -11,7 +11,7 @@
             </li>
 
             <li class="nav-item dropdown pr-md-1 pl-md-1 pr-lg-3 pl-lg-3">
-                <a class="nav-link" href="{!! route('vHome') !!}">Principal Message</a>
+                <a class="nav-link" href="{!! route('vPrincipalMessage') !!}">Principal Message</a>
             </li>
 
             <li class="nav-item dropdown pr-md-1 pl-md-1 pr-lg-3 pl-lg-3">

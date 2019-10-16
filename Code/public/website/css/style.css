@@ -151,6 +151,7 @@
 
 .paragraphBlock {
   padding: 3rem;
+  padding-bottom: 0rem;
 }
 
 .paragraphBlock .title {
@@ -535,6 +536,9 @@
 }
 
 @media (min-width: 320px) {
+  .serviceBlock {
+    padding-top: 3rem;
+  }
   .serviceBlock .text-primary {
     color: #9a0000 !important;
   }
@@ -577,6 +581,34 @@
     -webkit-transform: scale(1.05);
             transform: scale(1.05);
   }
+}
+
+.principalMessages {
+  padding: 3rem;
+  padding-bottom: 0rem;
+}
+
+.principalMessages .title {
+  font-family: BassetBoldItalic;
+  font-size: 28px;
+  color: #9a0000;
+  text-align: left;
+  margin: 8px;
+  font-weight: 800;
+}
+
+.principalMessages .subText {
+  font-family: BassetBoldItalic;
+  font-size: 16px;
+  color: #a19d9d;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  text-align: left;
+  line-height: 23px;
+}
+
+.principalMessages p {
+  color: #a19d9d;
 }
 
 .header-top-design {

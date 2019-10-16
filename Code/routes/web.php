@@ -19,3 +19,6 @@ Route::get('/feesPay',function () {
     return view('website/feesPay');
 })->name('vFeesPay');
 
+Route::get('/principalMessage',function () {
+    return view('website/principalMessage');
+})->name('vPrincipalMessage');

@@ -12,7 +12,7 @@ class PrincipalMessage extends Controller
     public function addPrincipalMessage(Request $request){
 
         $title = trim($request->input('title'));
-        $subtitle = trim($request->input('subtitle'));
+        $subtitle = html_entity_decode(trim($request->input('subtitle')));
 
         try {
             DB::insert('insert into principalMessages (title, subtitle) values (?, ?)', [$title, $subtitle]);
