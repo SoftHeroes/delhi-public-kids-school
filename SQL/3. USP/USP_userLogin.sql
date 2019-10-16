@@ -67,7 +67,7 @@ proc_Call:BEGIN
 
   SELECT phoneNumber,emailID,username INTO op_UserPhoneNumber,op_UserEmail,op_Username FROM `userInformation` WHERE ( emailID = p_op_Username OR phoneNumber = p_op_Username OR username = p_op_Username ) AND isLock = 0;
 
-  IF(stringIsNull(op_UserPhoneNumber)) THEN
+  IF(stringIsNull(op_UserEmail)) THEN
   BEGIN
     SELECT `Code`,`ErrorFound`,`Message`,`version`,`language`,ErrorMessage,op_UserEmail UserEmail,op_UserPhoneNumber UserPhoneNumber,op_Username Username FROM `MessageMaster` WHERE `Code` = 'ERR00008' AND `language` = p_Language;
     LEAVE proc_Call;
@@ -75,7 +75,7 @@ proc_Call:BEGIN
   END IF;
 
 
-  SET RowCount = ( SELECT 1 FROM `userInformation` WHERE phoneNumber = op_UserPhoneNumber AND password = AES_ENCRYPT(p_Password,op_UserEmail) );
+  SET RowCount = ( SELECT 1 FROM `userInformation` WHERE emailID = op_UserEmail AND password = AES_ENCRYPT(p_Password,op_UserEmail) );
   
   IF(RowCount > 0 ) THEN
     SELECT `Code`,`ErrorFound`,`Message`,`version`,`language`,ErrorMessage,op_UserEmail UserEmail,op_UserPhoneNumber UserPhoneNumber,op_Username Username FROM `MessageMaster` WHERE `Code` = 'ERR00006' AND `language` = p_Language;

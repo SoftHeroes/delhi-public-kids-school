@@ -200,7 +200,7 @@ proc_Call:BEGIN
       `UUID`
     ) 
     VALUES (
-      AES_ENCRYPT(p_Password,CAST(p_PhoneNumber as CHAR(10)) ),
+      AES_ENCRYPT(p_Password,p_EmailID),
       p_FirstName,
       p_MiddleName,
       p_LastName,
