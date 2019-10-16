@@ -22,3 +22,7 @@ Route::get('/feesPay',function () {
 Route::get('/principalMessage',function () {
     return view('website/principalMessage');
 })->name('vPrincipalMessage');
+
+Route::get('/homework',function () {
+    return view('website/homework');
+})->name('vHomework');

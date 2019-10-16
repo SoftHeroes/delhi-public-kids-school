@@ -99,10 +99,10 @@ DROP TABLE IF EXISTS homeworks;
 CREATE TABLE homeworks (
 	uniqueID bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
   class varchar(255) NOT NULL,
-	text varchar(255) DEFAULT NULL,
+	text varchar(5000) DEFAULT NULL,
   dateOfHomework DATE NOT NULL,
 	imageName varchar(255) DEFAULT NULL,
-  createDate DATETIME(6) DEFAULT CURRENT_TIMESTAMP(),
+  createDate DATE DEFAULT CURRENT_DATE(),
   deletedAt DATETIME(6) DEFAULT NULL,
 	PRIMARY KEY (uniqueID)
 )
@@ -114,10 +114,11 @@ DROP TABLE IF EXISTS weekSchedules;
 CREATE TABLE weekSchedules (
 	uniqueID bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
   class varchar(255) NOT NULL,
-	text varchar(255) DEFAULT NULL,
+	text varchar(5000) DEFAULT NULL,
   startDate date NOT NULL,
   endDate date NOT NULL,
 	imageName varchar(255) DEFAULT NULL,
+  createDate DATE DEFAULT CURRENT_DATE(),
   deletedAt DATETIME(6) DEFAULT NULL,
 	PRIMARY KEY (uniqueID)
 )

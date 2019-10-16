@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" />
 
     <link rel="stylesheet" href="{{ asset('website/css/style.css') }}" />
+
     <!-- CSS END-->
 
 </head>
@@ -50,6 +51,9 @@
 
     <!-- share this CDN-->
     <script type='text/javascript' src='//platform-api.sharethis.com/js/sharethis.js#property=5c14ae2a7b0b4500110a1ea6&product=inline-share-buttons' async='async'></script>
+
+    {{-- Notice --}}
+    <script src="{{asset('website/js/tabMenu.js')}}"></script>
 
     <!-- JS END -->
 </body>

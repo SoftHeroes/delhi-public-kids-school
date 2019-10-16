@@ -1,0 +1,63 @@
+.singleNoticeBlock{
+    padding-top: 2rem !important;
+}
+
+// Mobile sm : 320px and up
+@media (min-width: 320px) {
+    .tab-content{
+        .title{
+            font-family: BassetBoldItalic;
+            font-size: 28px;
+            color: #9a0000;
+            margin: 8px;
+            font-weight: 800;
+            padding-top: 1rem;
+        }
+    }
+    .tabMenu{
+
+        .nav-item{
+            display: none !important;
+            .nav-link{
+                color: #9a0000!important;
+            }
+        }
+        .mobileDropdown{
+            display: block !important;
+            .dropdown-menu{
+                inline-size: 100%;
+            }
+            .dropdown-item{
+                text-align: center!important;
+            }
+            .dropdown-item.active,.dropdown-item:active{
+                background-color: #9a0000!important;
+            }
+        }
+    }
+}
+
+
+// Tablets : 768px and up
+@media (min-width: 768px) {
+
+    .singleNoticeBlock{
+        padding-left: 2rem !important;
+        padding-right: 2rem !important;
+    }
+
+    .tabMenu{
+        .nav-item{
+            display: block !important;
+            .nav-link{
+                color: #9a0000!important;
+            }
+        }
+        .mobileDropdown{
+            display: none !important;
+            .dropdown-toggle::after {
+                display: none !important;
+            }
+        }
+    }
+}

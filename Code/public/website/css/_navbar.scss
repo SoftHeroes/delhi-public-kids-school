@@ -33,6 +33,20 @@
 // Tablets : 768px and up
 @media (min-width: 768px) {
 	.navbar {
+        .nav-link{
+            font-size: 0.8rem;
+        }
+		label {
+			display: none;
+		}
+	}
+}
+// Tablets : 1024px and up
+@media (min-width: 1024px) {
+	.navbar {
+        .nav-link{
+            font-size:1.15rem;
+        }
 		label {
 			display: none;
 		}
