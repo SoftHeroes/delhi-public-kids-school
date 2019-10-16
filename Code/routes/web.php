@@ -26,3 +26,7 @@ Route::get('/principalMessage',function () {
 Route::get('/homework',function () {
     return view('website/homework');
 })->name('vHomework');
+
+Route::get('/weekSchedule',function () {
+    return view('website/weekSchedule');
+})->name('vWeekSchedule');

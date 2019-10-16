@@ -18,7 +18,7 @@
             <li class="nav-item dropdown pr-md-0 pl-md-0 pr-lg-2.7 pl-lg-2.7">
                 <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Academics</a>
                 <div class="dropdown-menu" aria-labelledby="dropdownId">
-                    <a class="dropdown-item" href="rules.html">Week schedule</a>
+                    <a class="dropdown-item" href="{!! route('vWeekSchedule') !!}">Week schedule</a>
                     <a class="dropdown-item" href="{!! route('vHomework') !!}">Homework</a>
                 </div>
             </li>
