@@ -7,6 +7,7 @@
     $weekSchedulesManagment = array('vAddWeekSchedule','vViewWeekSchedules','vDeletedWeekSchedules');
     $principalMessagesManagment = array('vAddPrincipalMessage','vViewPrincipalMessages','vDeletedPrincipalMessages');
     $studentManagment = array('vAddStudent','vViewStudents','vDeletedStudents');
+    $imageGalleryManagment = array('vAddImageGallery','vViewImageGalleries','vDeletedImageGalleries');
 	@endphp
     <li class="app-menu__item {{$routeName == 'vDashboard' ? 'active' : ''}}"><a href="{!!route('vDashboard')!!}"><i class="fas fa-tachometer-alt"></i><span class="app-menu__label">Welcome</span></a></li>
 
@@ -61,5 +62,16 @@
 			<li><a class="treeview-item {{$routeName == 'vDeletedStudents' ? 'active' : ''}}" href="{!! route('vDeletedStudents') !!}"><i class="icon fa fa-circle-o"></i><span class="app-menu_sub_item">Deleted Student<span></a></li>
 		</ul>
     </li>
+
+    {{-- Image Gallery Managment --}}
+	<li class="treeview {{ in_array($routeName,$imageGalleryManagment) ? 'is-expanded' : ''}}">
+		<a class="app-menu__item" href="../search" data-toggle="treeview"><i class="fas fa-user-graduate"></i><span class="app-menu__label">Image Gallery </span><i class="treeview-indicator fa fa-angle-right"></i></a>
+		<ul class="treeview-menu">
+			<li><a class="treeview-item {{$routeName == 'vAddImageGallery' ? 'active' : ''}}" href="{!! route('vAddImageGallery') !!}"><i class="icon fa fa-circle-o"></i><span class="app-menu_sub_item">Add Image Gallery<span></a></li>
+			<li><a class="treeview-item {{$routeName == 'vViewImageGalleries' ? 'active' : ''}}" href="{!! route('vViewImageGalleries') !!}"><i class="icon fa fa-circle-o"></i><span class="app-menu_sub_item">View Image Galleries<span></a></li>
+			<li><a class="treeview-item {{$routeName == 'vDeletedImageGalleries' ? 'active' : ''}}" href="{!! route('vDeletedImageGalleries') !!}"><i class="icon fa fa-circle-o"></i><span class="app-menu_sub_item">Deleted Image Galleries<span></a></li>
+		</ul>
+    </li>
+
 </ul>
 @endsection

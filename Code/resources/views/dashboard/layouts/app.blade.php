@@ -95,6 +95,9 @@
         {{-- Form Validation --}}
         <script src="{{asset('js/formValidation.js')}}"></script>
 
+        {{-- Image Gallery --}}
+        <script src="{{asset('js/imageGallery.js')}}"></script>
+
         {{-- Week Picker --}}
         <script src="{{asset('plugins/weekPicker/js/jquery.weekpicker.js')}}"></script>
         <script>

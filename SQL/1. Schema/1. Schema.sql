@@ -152,4 +152,17 @@ ENGINE = INNODB,
 CHARACTER SET utf8,
 COLLATE utf8_general_ci;
 
+DROP TABLE IF EXISTS imageGallery;
+CREATE TABLE imageGallery (
+	uniqueID bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+	name varchar(255) NOT NULL,
+	imagesName varchar(1000) NOT NULL,
+  createDate DATE DEFAULT CURRENT_DATE(),
+  deletedAt DATETIME(6) DEFAULT NULL,
+	PRIMARY KEY (uniqueID)
+)
+ENGINE = INNODB,
+CHARACTER SET utf8,
+COLLATE utf8_general_ci;
+
 SET FOREIGN_KEY_CHECKS = 1;

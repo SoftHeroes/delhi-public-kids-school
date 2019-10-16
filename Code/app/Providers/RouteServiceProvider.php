@@ -55,6 +55,8 @@ class RouteServiceProvider extends ServiceProvider
 
         $this->mapStudentManagementRoutes();
 
+        $this->mapImageGalleryManagementRoutes();
+
     }
 
     /**
@@ -135,5 +137,10 @@ class RouteServiceProvider extends ServiceProvider
             ->namespace($this->namespace)
             ->group(base_path('routes/dashboard/studentManagement.php'));
     }
-
+    protected function mapImageGalleryManagementRoutes()
+    {
+        Route::middleware('web')
+            ->namespace($this->namespace)
+            ->group(base_path('routes/dashboard/imageGalleryManagement.php'));
+    }
 }
