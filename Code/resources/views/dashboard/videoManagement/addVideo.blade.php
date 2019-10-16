@@ -3,19 +3,19 @@
 {{-- Content Header --}}
 <div class="app-title">
 	<div>
-		<h1><i class="far fa-edit"></i> Add Image Gallery</h1>
+		<h1><i class="far fa-edit"></i> Add Video</h1>
 	</div>
 	<ul class="app-breadcrumb breadcrumb">
 		<li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
-		<li class="breadcrumb-item">Image Gallery Management</li>
-		<li class="breadcrumb-item">Add Image Gallery</li>
+		<li class="breadcrumb-item">Video Management</li>
+		<li class="breadcrumb-item">Add Video</li>
 	</ul>
 </div>
 <div class="row">
 	<div class="col-md-12">
 		<div class="tile">
 			<div class="tile-body col-md-12">
-				<h3 class="tile-title">Add Image Gallery</h3>
+				<h3 class="tile-title">Add Video</h3>
 				{{-- Error Message Code --}}
 				@if(session()->has('errors'))
 				<div class="alert alert-danger">
@@ -34,29 +34,26 @@
 					{{ session()->get('message') }}
 				</div>
                 @endif
-				<form name="imageGalleryForm" class="row" action="{!! route('addImageGallery') !!}" method="POST" enctype="multipart/form-data">
+				<form name="imageGalleryForm" class="row" action="{!! route('addVideo') !!}" method="POST" enctype="multipart/form-data">
                     {{csrf_field()}}
 					<div class="form-group col-md-6">
 						<label >Gallery Name</label>
 						<input class="form-control" maxlength="255" name="name" required="required" type="text">
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="exampleInputFile">Images</label>
-                        <input class="form-control-file" name="files[]" id="files" required="required" type="file"accept=".jpg,.jpeg" multiple><small class="form-text text-muted" id="fileHelp">This image will show as product primary. And try to Upload All Images 388x353 px.</small>
+                        <label for="exampleInputFile">Video</label>
+                        <input class="form-control-file file_multi_video" name="files[]" id="files" required="required" type="file"accept="video/*"><small class="form-text text-muted" id="fileHelp">This image will show in video Gallery. And try to Upload video less then 200MB.</small>
                     </div>
 
                     <div class="col-md-12">
                         <br><br>
                     </div>
-                    <div class="form-group col-md-4">
-                        <div class="overflow-auto imgPreviewBox"></div>
-                    </div>
-                    <div class="form-group col-md-8 text-center">
-                        <div class="col-md-12">
-                            <label for="exampleInputFile">Image Preview</label>
-                        </div>
-                        <div class="PreviewImageBlock col-md-12 align-self-center container" id="PreviewImageBlock">
-                            <img class="img-fluid" src="{{ asset('img/sliders/demo.png') }}" id="PreviewImg">
+                    <div class="col-md-12">
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <video controls>
+                                <source id="video_here" src="mov_bbb.mp4" type="video/mp4">
+                                Your browser does not support HTML5 video.
+                            </video>
                         </div>
                     </div>
                     <div class="col-md-12">

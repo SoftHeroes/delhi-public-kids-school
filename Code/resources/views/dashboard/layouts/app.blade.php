@@ -98,6 +98,9 @@
         {{-- Image Gallery --}}
         <script src="{{asset('js/imageGallery.js')}}"></script>
 
+        {{-- Video Gallery --}}
+        <script src="{{asset('js/video.js')}}"></script>
+
         {{-- Week Picker --}}
         <script src="{{asset('plugins/weekPicker/js/jquery.weekpicker.js')}}"></script>
         <script>

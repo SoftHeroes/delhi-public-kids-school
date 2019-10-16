@@ -57,6 +57,8 @@ class RouteServiceProvider extends ServiceProvider
 
         $this->mapImageGalleryManagementRoutes();
 
+        $this->mapVideoGalleryManagementRoutes();
+
     }
 
     /**
@@ -143,4 +145,11 @@ class RouteServiceProvider extends ServiceProvider
             ->namespace($this->namespace)
             ->group(base_path('routes/dashboard/imageGalleryManagement.php'));
     }
+    protected function mapVideoGalleryManagementRoutes()
+    {
+        Route::middleware('web')
+            ->namespace($this->namespace)
+            ->group(base_path('routes/dashboard/videoGalleryManagement.php'));
+    }
+
 }

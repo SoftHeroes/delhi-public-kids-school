@@ -1,13 +1,13 @@
 let previewImgRef = document.getElementById("PreviewImg");
 
 filesRef = document.getElementById("files");
-if (filesRef){
+if (filesRef && previewImgRef){
     filesRef.onchange = function () {
         let imgPreviewBoxRef = document.getElementsByClassName("imgPreviewBox");
 
         imgArr = this.files;
 
-        if (imgPreviewBoxRef){
+        if (imgPreviewBoxRef[0]){
             imgPreviewBoxRef[0].innerHTML = "";
 
             for (let index = 0; index < this.files.length; index++) {
