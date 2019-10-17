@@ -38,3 +38,6 @@ Route::get('/admissionForm',function () {
 Route::get('/contactUs',function () {
     return view('website/contactUs');
 })->name('vContactUs');
+
+Route::post('/sendContactMail', 'ContactUsMailer@sendContactMail')->name('sendContactMail');
+

@@ -8,10 +8,30 @@
             <div class="container-fluid contactUs">
                 <div class="row">
                     <div class="col-12">
-                        <br><br>
+                        <br>
+                        {{-- Error Message Code --}}
+                        @if(session()->has('errors'))
+                        <div class="alert alert-danger">
+                            <strong>Whoops!</strong> There were some problems with your input.
+                            <br />
+                            <ul>
+                                @foreach($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                        @endif
+                        {{-- Success Message Code --}}
+                        @if(session()->has('message'))
+                        <div class="alert alert-success">
+                            {{ session()->get('message') }}
+                        </div>
+                        @endif
+                        <br>
                         <h3 class="Display text-center">CONTACT US</h3>
                         <br>
-                        <form name="contactUsForm" action="#" onsubmit="return contactUsValidator()">
+                        <form name="contactUsForm" action="{!! route('sendContactMail') !!}" method="POST" onsubmit="return contactUsValidator()">
+                            {{csrf_field()}}
                             <div class="form-group">
                                 <label for="usr">Full Name</label>
                                 <input type="text" minlength="4" class="form-control" name="name" required>
