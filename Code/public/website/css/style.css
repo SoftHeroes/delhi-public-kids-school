@@ -675,6 +675,41 @@
   }
 }
 
+@media (min-width: 320px) {
+  .contactUs {
+    background-color: #ffffff00;
+    padding-bottom: 2rem;
+  }
+  .contactUs .form-group {
+    padding-left: 0rem;
+    padding-right: 0rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .contactUs {
+    background-color: #ffffff;
+    -webkit-box-shadow: 2px 6px 7px rgba(0, 0, 0, 0.25);
+            box-shadow: 2px 6px 7px rgba(0, 0, 0, 0.25);
+  }
+  .contactUs .form-group {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .contactUs {
+    background-color: #ffffff;
+    -webkit-box-shadow: 2px 6px 7px rgba(0, 0, 0, 0.25);
+            box-shadow: 2px 6px 7px rgba(0, 0, 0, 0.25);
+  }
+  .contactUs .form-group {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+}
+
 .header-top-design {
   background-color: #f6f7ed;
   background-image: url(../img/header_top_design.png);

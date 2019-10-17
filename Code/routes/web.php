@@ -34,3 +34,7 @@ Route::get('/weekSchedule',function () {
 Route::get('/admissionForm',function () {
     return view('website/admissionForm');
 })->name('vAdmissionForm');
+
+Route::get('/contactUs',function () {
+    return view('website/contactUs');
+})->name('vContactUs');

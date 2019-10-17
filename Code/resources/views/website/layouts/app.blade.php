@@ -55,6 +55,12 @@
     {{-- Notice --}}
     <script src="{{asset('website/js/tabMenu.js')}}"></script>
 
+    {{-- Input Validation --}}
+    <script src="{{asset('website/js/inputValidation.js')}}"></script>
+
+    {{-- Form Validation --}}
+    <script src="{{asset('website/js/formValidation.js')}}"></script>
+
     <!-- JS END -->
 </body>
 

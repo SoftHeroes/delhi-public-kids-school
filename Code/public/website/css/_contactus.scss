@@ -1,0 +1,57 @@
+// Mobile S : 320px and up
+@media (min-width: 320px) {
+    .contactUs{
+        background-color: #ffffff00;
+
+        padding-bottom: 2rem;
+        .form-group{
+            padding-left: 0rem;
+            padding-right: 0rem;
+        }
+    }
+}
+
+// Mobile M : 375px and up
+@media (min-width: 375px) {
+}
+
+// Mobile L : 425px and up
+@media (min-width: 425px) {
+}
+
+// Tablets : 768px and up
+@media (min-width: 768px) {
+    .contactUs{
+        background-color: #ffffff;
+        box-shadow: 2px 6px 7px rgba(0, 0, 0, 0.25);
+        .form-group{
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
+    }
+}
+
+// Laptop : 1024px and up
+@media (min-width: 1024px) {
+    .contactUs{
+        background-color: #ffffff;
+        box-shadow: 2px 6px 7px rgba(0, 0, 0, 0.25);
+        .form-group{
+            padding-left: 4rem;
+            padding-right: 4rem;
+        }
+    }
+}
+
+// Laptop L : 1440px and up
+@media (min-width: 1440px) {
+}
+
+// Laptop L : 1500px and up
+@media (min-width: 1500px) {
+}
+
+// 4K : 2560px and up
+@media (min-width: 2560px) {
+}
+

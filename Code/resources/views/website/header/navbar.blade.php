@@ -40,7 +40,7 @@
             </li>
 
             <li class="nav-item pr-md-0 pl-md-0 pr-lg-2.7 pl-lg-2.7">
-                <a class="nav-link" href="#">Contact us</a>
+                <a class="nav-link" href="{!! route('vContactUs') !!}">Contact us</a>
             </li>
         </ul>
     </div>
