@@ -39,5 +39,9 @@ Route::get('/contactUs',function () {
     return view('website/contactUs');
 })->name('vContactUs');
 
-Route::post('/sendContactMail', 'ContactUsMailer@sendContactMail')->name('sendContactMail');
+Route::get('/imageGallery',function () {
+    return view('website/imageGallery');
+})->name('vImageGallery');
 
+
+Route::post('/sendContactMail', 'ContactUsMailer@sendContactMail')->name('sendContactMail');

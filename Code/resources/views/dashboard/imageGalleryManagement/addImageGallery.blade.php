@@ -49,6 +49,7 @@
                         <br><br>
                     </div>
                     <div class="form-group col-md-4">
+                        <label for="exampleInputFile">Images Preview Box</label>
                         <div class="overflow-auto imgPreviewBox"></div>
                     </div>
                     <div class="form-group col-md-8 text-center">

@@ -710,6 +710,37 @@
   }
 }
 
+.imgGalleryBlock ul.horizontal-slide {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  white-space: nowrap;
+  overflow-x: auto;
+}
+
+.imgGalleryBlock ul.horizontal-slide li[class*="span"] {
+  display: inline-block;
+  float: none;
+}
+
+.imgGalleryBlock .singleImageGallery {
+  padding: 1rem;
+}
+
+.imgGalleryBlock .singleImageGallery .titleText {
+  font-family: BassetBoldItalic;
+  font-size: 28px;
+  color: #9a0000;
+  text-align: left;
+  margin: 8px;
+  font-weight: 800;
+}
+
+.imgGalleryBlock .singleImageGallery .img-fluid {
+  width: 200px;
+  border: 2px solid #9a0000;
+}
+
 .header-top-design {
   background-color: #f6f7ed;
   background-image: url(../img/header_top_design.png);

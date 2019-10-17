@@ -26,7 +26,7 @@
             <li class="nav-item dropdown pr-md-0 pl-md-0 pr-lg-2.7 pl-lg-2.7">
                 <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Gallery</a>
                 <div class="dropdown-menu" aria-labelledby="dropdownId">
-                    <a class="dropdown-item" href="#">Image Gallery</a>
+                    <a class="dropdown-item" href="{!! route('vImageGallery') !!}">Image Gallery</a>
                     <a class="dropdown-item" href="#">Video Gallery</a>
                 </div>
             </li>

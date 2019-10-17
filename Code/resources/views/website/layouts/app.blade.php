@@ -19,6 +19,9 @@
 
     <link rel="stylesheet" href="{{ asset('website/css/style.css') }}" />
 
+    {{-- lightGallery --}}
+    <link rel="stylesheet" href="{{asset('website/plugins/lightGallery/css/lightgallery.css')}}" />
+
     <!-- CSS END-->
 
 </head>
@@ -60,6 +63,14 @@
 
     {{-- Form Validation --}}
     <script src="{{asset('website/js/formValidation.js')}}"></script>
+
+    {{-- lightGallery --}}
+    <script src="https://cdn.jsdelivr.net/picturefill/2.3.1/picturefill.min.js"></script>
+    <script src="{{asset('website/plugins/lightGallery/js/lightgallery-all.min.js')}}"></script>
+    <script src="{{asset('website/plugins/lightGallery/js/jquery.mousewheel.min.js')}}"></script>
+
+    @include('website.imageGallery.imgScript')
+    @yield('imageGalleryScripter')
 
     <!-- JS END -->
 </body>
