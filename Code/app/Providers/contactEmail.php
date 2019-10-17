@@ -30,7 +30,7 @@ class contactEmail extends ServiceProvider
     public function contactUsMail($name,$emailID,$phoneNumber,$msg)
     {
         $to_name = 'Subham';
-        $to_email = 'ShubhamJobanputra@gmail.com';
+        $to_email = 'dpskidsbhopal@gmail.com';
         $data = array('name' => $name,'emailID' => $emailID,'phoneNumber' => $phoneNumber,'msg' => $msg,);
 
         Mail::send('website.email.contact', $data, function($message) use ($to_name, $to_email) {
