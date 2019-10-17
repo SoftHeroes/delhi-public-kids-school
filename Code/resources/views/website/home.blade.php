@@ -8,18 +8,10 @@ $PRSubTitle = 'Delhi Public Kids School is India’s fast-growing ISO 9001-2008 
 @endphp
 @include('website.paragraph.paragraph')
 @yield('paragraph')
-<!-- News heading -->
-<br><br>
-<div class="header-top-design-noColor">&nbsp;</div>
-<div class="newHeadingBlock">
-	<div class="newsheading text-center">Admission</div>
-	<marquee behavior="scroll" scrollamount="5" onMouseOver="this.stop();" onMouseOut="this.start();" direction="left">
-		<img src="{{ asset('website/img/title_icon.png') }}" alt="">
-		<a href="{!! route('vAdmissionForm') !!}" class="news-title" style="text-decoration:none">Admissions for Playgroup, Nursery, KG-1, KG-2 are open for 2019-20 Please visit our campus..</a>
-	</marquee>
-</div>
-<div class="header-top-design-noColor-rotated">&nbsp;</div>
-<!-- News heading -->
+
+@include('website.news.news')
+@yield('news')
+
 <!-- website Container -->
 <div class="container-fluid">
 	<div class="row">
