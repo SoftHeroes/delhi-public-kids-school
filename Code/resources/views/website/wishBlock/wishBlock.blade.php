@@ -1,6 +1,6 @@
 @section('wishBlock')
 @php
-$Birthdays = DB::select("SELECT * FROM students WHERE DAYOFYEAR(dateOfBirth) = DAYOFYEAR(CURRENT_DATE())");
+$Birthdays = DB::select("SELECT * FROM students WHERE DAY(dateOfBirth) = DAY(CURRENT_DATE()) AND MONTH(dateOfBirth) = MONTH(CURRENT_DATE());");
 @endphp
 @isset($Birthdays)
     @foreach ($Birthdays as $currentBirthday)
