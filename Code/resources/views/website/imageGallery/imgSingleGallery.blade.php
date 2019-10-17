@@ -1,7 +1,7 @@
 @if ( isset($imagesArr) && isset($index) && isset($galleryName))
 <div class="col-12 singleImageGallery">
     <h2 class="titleText" >{{$galleryName}}</h2>
-<ul id="lightgallery{{$index}}" class="horizontal-slide list-unstyled">
+<ul id="imageLightgallery{{$index}}" class="horizontal-slide list-unstyled">
     @foreach ($imagesArr as $currentImageRef)
     <li class="span" data-src="{{asset('/img/imageGallery/'.$currentImageRef) }}">
         <a href="">

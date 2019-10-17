@@ -8,7 +8,7 @@
     {{-- image gallery JS --}}
     <script type="text/javascript">
         $(document).ready(function () {
-            let lightgalleryRef = $('#lightgallery{{$i}}');
+            let lightgalleryRef = $('#imageLightgallery{{$i}}');
             if(lightgalleryRef){
                 lightgalleryRef.lightGallery();
             }
