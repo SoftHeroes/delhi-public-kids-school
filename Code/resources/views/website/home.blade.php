@@ -15,7 +15,7 @@ $PRSubTitle = 'Delhi Public Kids School is India’s fast-growing ISO 9001-2008 
 	<div class="newsheading text-center">Admission</div>
 	<marquee behavior="scroll" scrollamount="5" onMouseOver="this.stop();" onMouseOut="this.start();" direction="left">
 		<img src="{{ asset('website/img/title_icon.png') }}" alt="">
-		<a href="http://dpskidsbhopal.com" class="news-title" style="text-decoration:none">Admissions for Playgroup, Nursery, KG-1, KG-2 are open for 2019-20 Please visit our campus..</a>
+		<a href="{!! route('vAdmissionForm') !!}" class="news-title" style="text-decoration:none">Admissions for Playgroup, Nursery, KG-1, KG-2 are open for 2019-20 Please visit our campus..</a>
 	</marquee>
 </div>
 <div class="header-top-design-noColor-rotated">&nbsp;</div>
@@ -44,14 +44,14 @@ $PRSubTitle = 'Delhi Public Kids School is India’s fast-growing ISO 9001-2008 
 				</div>
 			</div>
 			<div class="row serviceBlock text-center justify-content-md-center">
-				<a href="#" class="col-sm-4 col-md-6 col-lg-4">
+				<a href="{!! route('vImageGallery') !!}" class="col-sm-4 col-md-6 col-lg-4">
 					<span class="fa-stack fa-4x">
 					<i class="fas fa-circle fa-stack-2x text-primary"></i>
 					<i class="fas fa-image fa-stack-1x fa-inverse"></i>
 					</span>
 					<h4>Image Gallery</h4>
 				</a>
-				<a href="#" class="col-sm-4 col-md-6 col-lg-4">
+				<a href="{!! route('vVideoGallery') !!}" class="col-sm-4 col-md-6 col-lg-4">
 					<span class="fa-stack fa-4x">
 					<i class="fas fa-circle fa-stack-2x text-primary"></i>
 					<i class="fas fa-film fa-stack-1x fa-inverse"></i>

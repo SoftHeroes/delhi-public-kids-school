@@ -12,7 +12,7 @@
 	<div class="newsheading text-center">Admission</div>
 	<marquee behavior="scroll" scrollamount="5" onMouseOver="this.stop();" onMouseOut="this.start();" direction="left">
 		<img src="{{ asset('website/img/title_icon.png') }}" alt="">
-		<a href="http://dpskidsbhopal.com" class="news-title" style="text-decoration:none">Admissions for Playgroup, Nursery, KG-1, KG-2 are open for 2019-20 Please visit our campus..</a>
+		<a href="{!! route('vAdmissionForm') !!}" class="news-title" style="text-decoration:none">Admissions for Playgroup, Nursery, KG-1, KG-2 are open for 2019-20 Please visit our campus..</a>
 	</marquee>
 </div>
 <div class="header-top-design-noColor-rotated">&nbsp;</div>
@@ -55,7 +55,7 @@
 
                                 @php
                                     $weekSchedules = null;
-                                    $weekSchedules = DB::select("SELECT * FROM weekSchedules WHERE class = 'Pre-Nursery (Play Group)' ORDER BY createDate DESC");
+                                    $weekSchedules = DB::select("SELECT * FROM weekSchedules WHERE class = 'Pre-Nursery (Play Group)' OR class = 'All' ORDER BY createDate DESC");
                                 @endphp
                                 @include('website.notice.weekSchedulePost')
                                 @yield('weekSchedulePost')
@@ -67,7 +67,7 @@
 
                                 @php
                                     $weekSchedules = null;
-                                    $weekSchedules = DB::select("SELECT * FROM weekSchedules WHERE class = 'Nursery' ORDER BY createDate DESC");
+                                    $weekSchedules = DB::select("SELECT * FROM weekSchedules WHERE class = 'Nursery' OR class = 'All' ORDER BY createDate DESC");
                                 @endphp
                                 @include('website.notice.weekSchedulePost')
                                 @yield('weekSchedulePost')
@@ -79,7 +79,7 @@
 
                                 @php
                                     $weekSchedules = null;
-                                    $weekSchedules = DB::select("SELECT * FROM weekSchedules WHERE class = 'KG-1' ORDER BY createDate DESC");
+                                    $weekSchedules = DB::select("SELECT * FROM weekSchedules WHERE class = 'KG-1' OR class = 'All' ORDER BY createDate DESC");
                                 @endphp
                                 @include('website.notice.weekSchedulePost')
                                 @yield('weekSchedulePost')
@@ -91,7 +91,7 @@
 
                                 @php
                                     $weekSchedules = null;
-                                    $weekSchedules = DB::select("SELECT * FROM weekSchedules WHERE class = 'KG-2' ORDER BY createDate DESC");
+                                    $weekSchedules = DB::select("SELECT * FROM weekSchedules WHERE class = 'KG-2' OR class = 'All' ORDER BY createDate DESC");
                                 @endphp
                                 @include('website.notice.weekSchedulePost')
                                 @yield('weekSchedulePost')

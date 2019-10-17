@@ -12,7 +12,7 @@
 	<div class="newsheading text-center">Admission</div>
 	<marquee behavior="scroll" scrollamount="5" onMouseOver="this.stop();" onMouseOut="this.start();" direction="left">
 		<img src="{{ asset('website/img/title_icon.png') }}" alt="">
-		<a href="http://dpskidsbhopal.com" class="news-title" style="text-decoration:none">Admissions for Playgroup, Nursery, KG-1, KG-2 are open for 2019-20 Please visit our campus..</a>
+		<a href="{!! route('vAdmissionForm') !!}" class="news-title" style="text-decoration:none">Admissions for Playgroup, Nursery, KG-1, KG-2 are open for 2019-20 Please visit our campus..</a>
 	</marquee>
 </div>
 <div class="header-top-design-noColor-rotated">&nbsp;</div>
@@ -51,11 +51,11 @@
 						<div class="tab-content">
                             {{-- Pre-Nursery (Play Group) --}}
 							<div class="tab-pane container-fluid active" id="preNursery">
-                                <div class="title text-center">Holidays</div>
+                                <div class="title text-center">Homeworks</div>
 
                                 @php
                                     $homeworks = null;
-                                    $homeworks = DB::select("SELECT * FROM homeworks WHERE class = 'Pre-Nursery (Play Group)' OR class = 'All' ORDER BY createDate DESC");
+                                    $homeworks = DB::select("SELECT * FROM homeworks WHERE class = 'Pre-Nursery (Play Group)' ORDER BY createDate DESC");
                                 @endphp
                                 @include('website.notice.homeworkPost')
                                 @yield('homeworkPost')
@@ -63,11 +63,11 @@
 
                             {{-- Nursery --}}
 							<div class="tab-pane container-fluid" id="nursery">
-                                <div class="title text-center">Holidays</div>
+                                <div class="title text-center">Homeworks</div>
 
                                 @php
                                     $homeworks = null;
-                                    $homeworks = DB::select("SELECT * FROM homeworks WHERE class = 'Nursery' OR class = 'All' ORDER BY createDate DESC");
+                                    $homeworks = DB::select("SELECT * FROM homeworks WHERE class = 'Nursery' ORDER BY createDate DESC");
                                 @endphp
                                 @include('website.notice.homeworkPost')
                                 @yield('homeworkPost')
@@ -75,11 +75,11 @@
 
                             {{-- KG-1 --}}
 							<div class="tab-pane container-fluid" id="kg1">
-                                <div class="title text-center">Holidays</div>
+                                <div class="title text-center">Homeworks</div>
 
                                 @php
                                     $homeworks = null;
-                                    $homeworks = DB::select("SELECT * FROM homeworks WHERE class = 'KG-1' OR class = 'All' ORDER BY createDate DESC");
+                                    $homeworks = DB::select("SELECT * FROM homeworks WHERE class = 'KG-1' ORDER BY createDate DESC");
                                 @endphp
                                 @include('website.notice.homeworkPost')
                                 @yield('homeworkPost')
@@ -87,11 +87,11 @@
 
                             {{-- KG-2 --}}
 							<div class="tab-pane container-fluid" id="kg2">
-                                <div class="title text-center">Holidays</div>
+                                <div class="title text-center">Homeworks</div>
 
                                 @php
                                     $homeworks = null;
-                                    $homeworks = DB::select("SELECT * FROM homeworks WHERE class = 'KG-2' OR class = 'All' ORDER BY createDate DESC ");
+                                    $homeworks = DB::select("SELECT * FROM homeworks WHERE class = 'KG-2' ORDER BY createDate DESC ");
                                 @endphp
                                 @include('website.notice.homeworkPost')
                                 @yield('homeworkPost')

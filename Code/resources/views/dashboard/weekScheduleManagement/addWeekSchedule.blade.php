@@ -45,7 +45,8 @@
 							<option disabled selected value> -- select an class -- </option>
 							@foreach($classes as $currentClassesRef)
 							<option value="{{$currentClassesRef->name}}">{{$currentClassesRef->name}}</option>
-							@endforeach
+                            @endforeach
+                            <option value="All">All</option>
 						</select>
 					</div>
                     <div class="form-group col-6">
