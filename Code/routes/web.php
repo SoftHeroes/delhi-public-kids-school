@@ -30,3 +30,7 @@ Route::get('/homework',function () {
 Route::get('/weekSchedule',function () {
     return view('website/weekSchedule');
 })->name('vWeekSchedule');
+
+Route::get('/admissionForm',function () {
+    return view('website/admissionForm');
+})->name('vAdmissionForm');

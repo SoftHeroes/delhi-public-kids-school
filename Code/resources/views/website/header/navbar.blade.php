@@ -36,7 +36,7 @@
             </li>
 
             <li class="nav-item pr-md-0 pl-md-0 pr-lg-2.7 pl-lg-2.7">
-                <a class="nav-link" href="#">Admission Form</a>
+                <a class="nav-link" href="{!! route('vAdmissionForm') !!}">Admission Form</a>
             </li>
 
             <li class="nav-item pr-md-0 pl-md-0 pr-lg-2.7 pl-lg-2.7">

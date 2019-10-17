@@ -732,4 +732,9 @@ body {
 .copyRight h6 {
   color: white;
 }
+
+.btn-primary {
+  background-color: #9a0000 !important;
+  border: none;
+}
 /*# sourceMappingURL=style.css.map */

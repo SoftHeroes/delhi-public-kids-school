@@ -12,10 +12,3 @@ use Illuminate\Http\Request;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-
-Route::get('/getAllSlider',function () {
-    $url = URL::asset('/img/sliders');
-    $sliders = DB::select("select uniqueID,title,CONCAT(?,'/',imageName) imagePath from sliders where deletedAt IS NULL",[$url]);
-
-    return response()->json($sliders);
-});
