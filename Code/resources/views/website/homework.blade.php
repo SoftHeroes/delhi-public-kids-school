@@ -55,7 +55,7 @@
 
                                 @php
                                     $homeworks = null;
-                                    $homeworks = DB::select("SELECT * FROM homeworks WHERE class = 'Pre-Nursery (Play Group)' OR class = 'All'");
+                                    $homeworks = DB::select("SELECT * FROM homeworks WHERE class = 'Pre-Nursery (Play Group)' OR class = 'All' ORDER BY createDate DESC");
                                 @endphp
                                 @include('website.notice.homeworkPost')
                                 @yield('homeworkPost')
@@ -67,7 +67,7 @@
 
                                 @php
                                     $homeworks = null;
-                                    $homeworks = DB::select("SELECT * FROM homeworks WHERE class = 'Nursery' OR class = 'All'");
+                                    $homeworks = DB::select("SELECT * FROM homeworks WHERE class = 'Nursery' OR class = 'All' ORDER BY createDate DESC");
                                 @endphp
                                 @include('website.notice.homeworkPost')
                                 @yield('homeworkPost')
@@ -79,7 +79,7 @@
 
                                 @php
                                     $homeworks = null;
-                                    $homeworks = DB::select("SELECT * FROM homeworks WHERE class = 'KG-1' OR class = 'All'");
+                                    $homeworks = DB::select("SELECT * FROM homeworks WHERE class = 'KG-1' OR class = 'All' ORDER BY createDate DESC");
                                 @endphp
                                 @include('website.notice.homeworkPost')
                                 @yield('homeworkPost')
@@ -91,7 +91,7 @@
 
                                 @php
                                     $homeworks = null;
-                                    $homeworks = DB::select("SELECT * FROM homeworks WHERE class = 'KG-2' OR class = 'All' ");
+                                    $homeworks = DB::select("SELECT * FROM homeworks WHERE class = 'KG-2' OR class = 'All' ORDER BY createDate DESC ");
                                 @endphp
                                 @include('website.notice.homeworkPost')
                                 @yield('homeworkPost')

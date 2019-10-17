@@ -22,7 +22,7 @@
 
                     @php
                         use Illuminate\Support\Facades\DB;
-                        $principalMessages = DB::select('SELECT * FROM principalMessages WHERE deletedAt IS NULL');
+                        $principalMessages = DB::select('SELECT * FROM principalMessages WHERE deletedAt IS NULL ORDER BY createDate DESC');
                     @endphp
 
                     @foreach ($principalMessages as $currentPrincipalMessage)

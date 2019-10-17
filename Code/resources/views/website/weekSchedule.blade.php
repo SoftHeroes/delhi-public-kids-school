@@ -55,7 +55,7 @@
 
                                 @php
                                     $weekSchedules = null;
-                                    $weekSchedules = DB::select("SELECT * FROM weekSchedules WHERE class = 'Pre-Nursery (Play Group)'");
+                                    $weekSchedules = DB::select("SELECT * FROM weekSchedules WHERE class = 'Pre-Nursery (Play Group)' ORDER BY createDate DESC");
                                 @endphp
                                 @include('website.notice.weekSchedulePost')
                                 @yield('weekSchedulePost')
@@ -67,7 +67,7 @@
 
                                 @php
                                     $weekSchedules = null;
-                                    $weekSchedules = DB::select("SELECT * FROM weekSchedules WHERE class = 'Nursery'");
+                                    $weekSchedules = DB::select("SELECT * FROM weekSchedules WHERE class = 'Nursery' ORDER BY createDate DESC");
                                 @endphp
                                 @include('website.notice.weekSchedulePost')
                                 @yield('weekSchedulePost')
@@ -79,7 +79,7 @@
 
                                 @php
                                     $weekSchedules = null;
-                                    $weekSchedules = DB::select("SELECT * FROM weekSchedules WHERE class = 'KG-1'");
+                                    $weekSchedules = DB::select("SELECT * FROM weekSchedules WHERE class = 'KG-1' ORDER BY createDate DESC");
                                 @endphp
                                 @include('website.notice.weekSchedulePost')
                                 @yield('weekSchedulePost')
@@ -91,7 +91,7 @@
 
                                 @php
                                     $weekSchedules = null;
-                                    $weekSchedules = DB::select("SELECT * FROM weekSchedules WHERE class = 'KG-2'");
+                                    $weekSchedules = DB::select("SELECT * FROM weekSchedules WHERE class = 'KG-2' ORDER BY createDate DESC");
                                 @endphp
                                 @include('website.notice.weekSchedulePost')
                                 @yield('weekSchedulePost')
