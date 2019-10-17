@@ -43,5 +43,8 @@ Route::get('/imageGallery',function () {
     return view('website/imageGallery');
 })->name('vImageGallery');
 
+Route::get('/videoGallery',function () {
+    return view('website/videoGallery');
+})->name('vVideoGallery');
 
 Route::post('/sendContactMail', 'ContactUsMailer@sendContactMail')->name('sendContactMail');

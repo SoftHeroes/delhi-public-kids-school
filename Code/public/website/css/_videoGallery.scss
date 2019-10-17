@@ -1,0 +1,15 @@
+.videoGalleryBlock{
+
+    .img-hover-zoom{
+        background-color: black;
+        overflow: hidden;
+        img{
+            transition: transform .5s ease;
+            opacity: 1;
+            &:hover{
+                transform: scale(1.2);
+                opacity: 0.7;
+            }
+        }
+    }
+}

@@ -760,6 +760,25 @@
   opacity: 0.7;
 }
 
+.videoGalleryBlock .img-hover-zoom {
+  background-color: black;
+  overflow: hidden;
+}
+
+.videoGalleryBlock .img-hover-zoom img {
+  -webkit-transition: -webkit-transform .5s ease;
+  transition: -webkit-transform .5s ease;
+  transition: transform .5s ease;
+  transition: transform .5s ease, -webkit-transform .5s ease;
+  opacity: 1;
+}
+
+.videoGalleryBlock .img-hover-zoom img:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  opacity: 0.7;
+}
+
 .header-top-design {
   background-color: #f6f7ed;
   background-image: url(../img/header_top_design.png);

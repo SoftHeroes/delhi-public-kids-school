@@ -72,6 +72,15 @@
     @include('website.imageGallery.imgScript')
     @yield('imageGalleryScripter')
 
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            let videpGalleryRef = $('#html5-videos')
+            if(videpGalleryRef){
+                videpGalleryRef.lightGallery();
+            }
+        });
+    </script>
     <!-- JS END -->
 </body>
 
