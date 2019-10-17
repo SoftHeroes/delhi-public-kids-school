@@ -110,93 +110,29 @@
     <!-- website Container -->
     <div class="container-fluid imgGalleryBlock">
         <div class="row">
-            <div class="col-12 singleImageGallery">
-                <h2 class="titleText" >Test entry</h2>
-                <ul id="lightgallery" class="horizontal-slide list-unstyled">
-                    <li class="span" data-src="img/img/b- (1).JPG">
-                        <a href="">
-                            <img class="img-responsive img-fluid" src="img/img/b- (1).JPG">
-                        </a>
-                    </li>
-                    <li class="span" data-src="img/img/b- (2).JPG">
-                        <a href="">
-                            <img class="img-responsive img-fluid" src="img/img/b- (2).JPG">
-                        </a>
-                    </li>
-                    <li class="span" data-src="img/img/b- (3).JPG">
-                        <a href="">
-                            <img class="img-responsive img-fluid" src="img/img/b- (3).JPG">
-                        </a>
-                    </li>
-                    <li class="span" data-src="img/img/b- (4).JPG">
-                        <a href="">
-                            <img class="img-responsive img-fluid" src="img/img/b- (4).JPG">
-                        </a>
-                    </li>
-                    <li class="span" data-src="img/img/b- (1).JPG">
-                        <a href="">
-                            <img class="img-responsive img-fluid" src="img/img/b- (1).JPG">
-                        </a>
-                    </li>
-                    <li class="span" data-src="img/img/b- (2).JPG">
-                        <a href="">
-                            <img class="img-responsive img-fluid" src="img/img/b- (2).JPG">
-                        </a>
-                    </li>
-                    <li class="span" data-src="img/img/b- (3).JPG">
-                        <a href="">
-                            <img class="img-responsive img-fluid" src="img/img/b- (3).JPG">
-                        </a>
-                    </li>
-                    <li class="span" data-src="img/img/b- (4).JPG">
-                        <a href="">
-                            <img class="img-responsive img-fluid" src="img/img/b- (4).JPG">
-                        </a>
-                    </li>
-                </ul>
+            <!-- Hidden video div -->
+            <div style="display:none;" id="video1">
+                <video class="lg-video-object lg-html5" controls preload="none">
+                    <source src="vid/vid- (1).mp4" type="video/mp4">
+                    Your browser does not support HTML5 video.
+                </video>
+            </div>
+            <div style="display:none;" id="video2">
+                <video class="lg-video-object lg-html5" controls preload="none">
+                    <source src="vid/vid- (2).mp4" type="video/mp4">
+                    Your browser does not support HTML5 video.
+                </video>
             </div>
 
-            <div class="col-12 singleImageGallery">
-                <h2 class="titleText">Test entry</h2>
-                <ul id="lightgallery1" class="horizontal-slide list-unstyled">
-                    <li class="span" data-src="img/img/prod- (1).jpg">
-                        <a href="">
-                            <img class="img-responsive img-fluid" src="img/img/prod- (1).jpg">
-                        </a>
-                    </li>
-                    <li class="span" data-src="img/img/prod- (2).jpg">
-                        <a href="">
-                            <img class="img-responsive img-fluid" src="img/img/prod- (2).jpg">
-                        </a>
-                    </li>
-                    <li class="span" data-src="img/img/prod- (3).jpg">
-                        <a href="">
-                            <img class="img-responsive img-fluid" src="img/img/prod- (3).jpg">
-                        </a>
-                    </li>
-                    <li class="span" data-src="img/img/prod- (4).jpg">
-                        <a href="">
-                            <img class="img-responsive img-fluid" src="img/img/prod- (4).jpg">
-                        </a>
-                    </li>
-                    <li class="span" data-src="img/img/prod- (5).jpg">
-                        <a href="">
-                            <img class="img-responsive img-fluid" src="img/img/prod- (5).jpg">
-                        </a>
-                    </li>
-                    <li class="span" data-src="img/img/prod- (6).jpg">
-                        <a href="">
-                            <img class="img-responsive img-fluid" src="img/img/prod- (6).jpg">
-                        </a>
-                    </li>
-                    <li class="span" data-src="img/img/prod- (7).jpg">
-                        <a href="">
-                            <img class="img-responsive img-fluid" src="img/img/prod- (7).jpg">
-                        </a>
-                    </li>
-                </ul>
-            </div>
-
+            <!-- data-src should not be provided when you use html5 videos -->
+            <ul id="html5-videos">
+                <li data-poster="video-poster1.jpg" data-sub-html="video caption1" data-html="#video1">
+                    <img class="img-fluid" src="img/img/b- (1).JPG" />
+                </li>
+                <li data-poster="video-poster2.jpg" data-sub-html="video caption2" data-html="#video2">
+                    <img class="img-fluid" src="img/img/b- (2).JPG" />
+                </li>
+            </ul>
         </div>
     </div>
     <!-- website Container -->
@@ -266,25 +202,11 @@
     <script src="https://cdn.jsdelivr.net/picturefill/2.3.1/picturefill.min.js"></script>
     <script src="plugins/lightGallery/js/lightgallery-all.min.js"></script>
     <script src="plugins/lightGallery/js/jquery.mousewheel.min.js"></script>
-    
+
 
     <script type="text/javascript">
         $(document).ready(function () {
-            $('#lightgallery').lightGallery({
-                thumbnail:true,
-                animateThumb: false,
-                showThumbByDefault: false
-            });
-        });
-    </script>
-
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $('#lightgallery1').lightGallery({
-                thumbnail:true,
-                animateThumb: false,
-                showThumbByDefault: false
-            });
+            $('#html5-videos').lightGallery();
         });
     </script>
 
