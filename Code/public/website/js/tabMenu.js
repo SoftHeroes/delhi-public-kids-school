@@ -1,7 +1,21 @@
-function changeLinkText(_innerHTML)
-{
+function changeLinkText(_innerHTML) {
     let mobileDropdownLinkRef = $('#mobileDropdownLink');
-    if(mobileDropdownLinkRef){
+    if (mobileDropdownLinkRef) {
         mobileDropdownLinkRef.html(mobileDropdownLinkRef.html().replace(mobileDropdownLinkRef.text(), _innerHTML));
     }
 }
+
+function toggleDropdown(e) {
+    const _d = $(e.target).closest('.dropdown'),
+        _m = $('.dropdown-menu', _d);
+    setTimeout(function () {
+        const shouldOpen = e.type !== 'click' && _d.is(':hover');
+        _m.toggleClass('show', shouldOpen);
+        _d.toggleClass('show', shouldOpen);
+        $('[data-toggle="dropdown"]', _d).attr('aria-expanded', shouldOpen);
+    }, e.type === 'mouseleave' ? 300 : 0);
+}
+
+$('body')
+    .on('mouseenter mouseleave', '.dropdown', toggleDropdown)
+    .on('click', '.dropdown-menu a', toggleDropdown);

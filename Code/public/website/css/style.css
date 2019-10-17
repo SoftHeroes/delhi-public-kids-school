@@ -74,6 +74,10 @@
   padding-right: 2rem;
 }
 
+.navbar .navbar-collapse .navbar-nav li:hover .dropdown-menu {
+  display: block;
+}
+
 .navbar .navbar-collapse .dropdown-menu {
   background-color: #b40000;
 }
