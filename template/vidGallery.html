@@ -108,7 +108,7 @@
     <!-- Navbar Bar -->
 
     <!-- website Container -->
-    <div class="container-fluid imgGalleryBlock">
+    <div class="container-fluid videoGalleryBlock">
         <div class="row">
             <!-- Hidden video div -->
             <div style="display:none;" id="video1">
@@ -124,13 +124,18 @@
                 </video>
             </div>
 
-            <!-- data-src should not be provided when you use html5 videos -->
-            <ul id="html5-videos">
-                <li data-poster="video-poster1.jpg" data-sub-html="video caption1" data-html="#video1">
-                    <img class="img-fluid" src="img/img/b- (1).JPG" />
+            <ul id="html5-videos" class="row" style="list-style-type: none;">
+                <li class="col-md-6 col-lg-3" data-poster="img/img/b- (1).JPG" data-sub-html="video caption1" data-html="#video1">
+                    <div class="img-hover-zoom">
+                        <img class="img-fluid" src="img/img/b- (1).JPG"/>
+                    </div>
+                    <p class="text-center">video caption1</p>
                 </li>
-                <li data-poster="video-poster2.jpg" data-sub-html="video caption2" data-html="#video2">
-                    <img class="img-fluid" src="img/img/b- (2).JPG" />
+                <li class="col-md-6 col-lg-3" data-poster="img/img/b- (2).JPG" data-sub-html="video caption2" data-html="#video2">
+                    <div class="img-hover-zoom">
+                        <img class="img-fluid" src="img/img/b- (2).JPG"/>
+                    </div>
+                    <p class="text-center">video caption2</p>
                 </li>
             </ul>
         </div>

@@ -5,7 +5,9 @@
     @foreach ($imagesArr as $currentImageRef)
     <li class="span" data-src="{{asset('/img/imageGallery/'.$currentImageRef) }}">
         <a href="">
-            <img class="img-responsive img-fluid" src="{{asset('/img/imageGallery/'.$currentImageRef) }}">
+            <div class="img-hover-zoom">
+                <img class="img-responsive img-fluid" src="{{asset('/img/imageGallery/'.$currentImageRef) }}">
+            </div>
         </a>
     </li>
     @endforeach

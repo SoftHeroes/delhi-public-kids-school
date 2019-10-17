@@ -736,9 +736,28 @@
   font-weight: 800;
 }
 
-.imgGalleryBlock .singleImageGallery .img-fluid {
+.imgGalleryBlock .singleImageGallery .img-hover-zoom {
+  background-color: black;
+  overflow: hidden;
+}
+
+.imgGalleryBlock .singleImageGallery .img-hover-zoom .img-fluid {
   width: 200px;
   border: 2px solid #9a0000;
+}
+
+.imgGalleryBlock .singleImageGallery .img-hover-zoom img {
+  -webkit-transition: -webkit-transform .5s ease;
+  transition: -webkit-transform .5s ease;
+  transition: transform .5s ease;
+  transition: transform .5s ease, -webkit-transform .5s ease;
+  opacity: 1;
+}
+
+.imgGalleryBlock .singleImageGallery .img-hover-zoom img:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  opacity: 0.7;
 }
 
 .header-top-design {
