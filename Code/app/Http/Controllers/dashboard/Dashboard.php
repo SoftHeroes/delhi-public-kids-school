@@ -16,7 +16,7 @@ class Dashboard extends Controller
 
         $Events = $this->eventProvider->getTodayEvent();
 
-        $BirthDays = DB::select('SELECT * FROM students WHERE DAYOFYEAR(dateOfBirth) = DAYOFYEAR(CURRENT_DATE())');
+        $BirthDays = DB::select('SELECT * FROM students WHERE DAY(dateOfBirth) = DAY(CURRENT_DATE()) AND MONTH(dateOfBirth) = MONTH(CURRENT_DATE());');
         return view('dashboard/dashboard',compact('BirthDays','Events'));
 
     }

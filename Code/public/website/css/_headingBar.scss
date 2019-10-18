@@ -27,6 +27,8 @@
 		}
 
 		.headCenterText {
+            padding-left: 1rem;
+            padding-right: 1rem;
 			display: block;
 			font-family: BazookaRegular;
 			font-size: 30px;
@@ -48,10 +50,16 @@
 		}
 
 		.headCenterText {
-			font-family: BazookaRegular;
-			font-size: 40px;
-			color: #9a0000;
-			text-align: Left;
+            .schName{
+                font-family: PF_Fusion_Sans_Pro_Black;
+                font-size: 50px;
+                color: #18994D;
+            }
+            .schSubHeading{
+                font-family: ArialNovaW07Bold;
+                font-size: 20px;
+                color: #272da5;
+            }
 		}
 	}
 }

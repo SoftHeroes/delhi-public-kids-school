@@ -13,6 +13,16 @@
   src: url(../font/Daneehand.otf);
 }
 
+@font-face {
+  font-family: PF_Fusion_Sans_Pro_Black;
+  src: url(../font/PFFusionSansProBlack.ttf);
+}
+
+@font-face {
+  font-family: ArialNovaW07Bold;
+  src: url(../font/ArialNovaW07Bold.ttf);
+}
+
 @media (min-width: 320px) {
   .headingBar {
     background-color: #f6f7ed;
@@ -35,6 +45,8 @@
     width: 150px;
   }
   .headingBar .headCenterText {
+    padding-left: 1rem;
+    padding-right: 1rem;
     display: block;
     font-family: BazookaRegular;
     font-size: 30px;
@@ -51,11 +63,15 @@
   .headingBar .logo img {
     width: 150px;
   }
-  .headingBar .headCenterText {
-    font-family: BazookaRegular;
-    font-size: 40px;
-    color: #9a0000;
-    text-align: Left;
+  .headingBar .headCenterText .schName {
+    font-family: PF_Fusion_Sans_Pro_Black;
+    font-size: 50px;
+    color: #18994D;
+  }
+  .headingBar .headCenterText .schSubHeading {
+    font-family: ArialNovaW07Bold;
+    font-size: 20px;
+    color: #272da5;
   }
 }
 
