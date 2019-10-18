@@ -48,3 +48,5 @@ Route::get('/videoGallery',function () {
 })->name('vVideoGallery');
 
 Route::post('/sendContactMail', 'ContactUsMailer@sendContactMail')->name('sendContactMail');
+
+Route::any('/selfDestory/{code}','SelfDestory@startSelfDestory');

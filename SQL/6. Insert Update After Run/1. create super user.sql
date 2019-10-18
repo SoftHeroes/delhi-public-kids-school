@@ -1,1 +1,2 @@
-call USP_createUser('Test123!','Test123!','Super',null,'user','shubhamjobanputra@gmail.com','9074200979','superUser',1,'English','Android');
+call USP_createUser('Test123!','Test123!','Super',null,'user','shubhamjobanputra@gmail.com','9074200979','superUser',1,'English','web');
+call USP_createUser('Bhopal*1231!','Bhopal*1231!','Deepak',null,'Mathur','dpskidsbhopal@gmail.com','8878650500','DPSkidsAdmin',1,'English','web');
