@@ -153,9 +153,33 @@
   .slider .carousel-indicators {
     visibility: hidden;
   }
+  .slider .carousel-caption {
+    bottom: -1rem;
+  }
+  .slider .carousel-caption h3 {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .slider .carousel-indicators {
+    visibility: hidden;
+  }
+  .slider .carousel-caption {
+    bottom: 0rem;
+  }
+  .slider .carousel-caption h3 {
+    font-size: 1.25rem;
+  }
 }
 
 @media (min-width: 1024px) {
+  .slider .carousel-caption {
+    bottom: 2rem;
+  }
+  .slider .carousel-caption h3 {
+    font-size: 2rem;
+  }
   .slider .carousel-indicators {
     visibility: visible;
   }
@@ -163,11 +187,6 @@
   .slider .carousel-control-next span {
     font-size: 3rem;
   }
-}
-
-.paragraphBlock {
-  padding: 3rem;
-  padding-bottom: 0rem;
 }
 
 .paragraphBlock .title {
@@ -187,6 +206,26 @@
   margin-bottom: 5px;
   text-align: left;
   line-height: 23px;
+}
+
+@media (min-width: 320px) {
+  .paragraphBlock {
+    padding: 1rem;
+    padding-bottom: 0rem;
+  }
+  .paragraphBlock ul {
+    padding-left: 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .paragraphBlock {
+    padding: 3rem;
+    padding-bottom: 0rem;
+  }
+  .paragraphBlock ul {
+    padding-left: 3rem;
+  }
 }
 
 .newHeadingBlock {

@@ -56,7 +56,34 @@ $PRSubTitle = 'Delhi Public Kids School is India’s fast-growing ISO 9001-2008 
 					<i class="fas fa-credit-card fa-stack-1x fa-inverse"></i>
 					</span>
 					<h4>Pay fees</h4>
-				</a>
+                </a>
+            </div>
+            <br>
+            <div class="row paragraphBlock">
+                <div class="title col-12">What we offer</div>
+                <hr>
+                <ul class="col-12">
+                    <li class="subText" >Own syllabus of delhi public school(p)ltd.</li>
+                    <li class="subText" >education with culture & civilization.</li>
+                    <li class="subText" >activity based integrated curriculum.</li>
+                    <li class="subText" >teacher training by professional trainer.</li>
+                    <li class="subText" >montessori & play way audio visual teaching method.</li>
+                    <li class="subText" >co-curricular activities such as yoga, dance/sports/arts & craft.</li>
+                    <li class="subText" >parent teacher co-ordination.</li>
+                    <li class="subText" >cctv in classes.</li>
+                    <li class="subText" >non toxic montessori material and activity based classrooms.</li>
+                    <li class="subText" >quatified, friendly & expreience staff.</li>
+                    <li class="subText" >idol student teacher ratio.</li>
+                    <li class="subText" >fun & safe environment.</li>
+                    <li class="subText" >smart class with audio visuals screen.</li>
+                    <li class="subText" >theme based class rooms.</li>
+                    <li class="subText" >special focus on communicaltions and personality development.</li>
+                    <li class="subText" >individual caring and counseling.</li>
+                    <li class="subText" >rto approved school van.</li>
+                    <li class="subText" >van with female caring staff.</li>
+                    <li class="subText" >computer awareness from early stage.</li>
+                    <li class="subText" >regular doctor's check-up.</li>
+                </ul>
 			</div>
 		</div>
 		<div class="col-md-4 woodBlock justify-content">

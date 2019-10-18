@@ -1,7 +1,4 @@
 .paragraphBlock {
-	padding: 3rem;
-    padding-bottom : 0rem;
-
 	.title {
 		font-family: BassetBoldItalic;
 		font-size: 28px;
@@ -20,4 +17,52 @@
 		text-align: left;
 		line-height: 23px;
 	}
+}
+
+
+// Mobile S : 320px and up
+@media (min-width: 320px) {
+    .paragraphBlock{
+        padding: 1rem;
+        padding-bottom : 0rem;
+        ul{
+            padding-left: 3rem;
+        }
+    }
+}
+
+// Mobile M : 375px and up
+@media (min-width: 375px) {
+}
+
+// Mobile L : 425px and up
+@media (min-width: 425px) {
+}
+
+// Tablets : 768px and up
+@media (min-width: 768px) {
+
+}
+
+// Laptop : 1024px and up
+@media (min-width: 1024px) {
+    .paragraphBlock{
+        padding: 3rem;
+        padding-bottom : 0rem;
+        ul{
+            padding-left: 3rem;
+        }
+    }
+}
+
+// Laptop L : 1440px and up
+@media (min-width: 1440px) {
+}
+
+// Laptop L : 1500px and up
+@media (min-width: 1500px) {
+}
+
+// 4K : 2560px and up
+@media (min-width: 2560px) {
 }

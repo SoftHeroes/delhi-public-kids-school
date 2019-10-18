@@ -36,7 +36,14 @@
 	.slider {
 		.carousel-indicators {
 			visibility: hidden;
-		}
+        }
+
+        .carousel-caption{
+            bottom: -1rem;
+            h3{
+                font-size: 1rem;
+            }
+        }
 	}
 }
 
@@ -50,11 +57,31 @@
 
 // Tablets : 768px and up
 @media (min-width: 768px) {
+	.slider {
+		.carousel-indicators {
+			visibility: hidden;
+        }
+
+        .carousel-caption{
+            bottom: 0rem;
+            h3{
+                font-size: 1.25rem;
+            }
+        }
+	}
 }
 
 // Laptop : 1024px and up
 @media (min-width: 1024px) {
 	.slider {
+
+        .carousel-caption{
+            bottom: 2rem;
+            h3{
+                font-size: 2rem;
+            }
+        }
+
 		.carousel-indicators {
 			visibility: visible;
 		}
@@ -74,3 +101,5 @@
 // 4K : 2560px and up
 @media (min-width: 2560px) {
 }
+
+
