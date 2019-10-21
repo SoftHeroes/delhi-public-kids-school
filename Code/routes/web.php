@@ -50,3 +50,7 @@ Route::get('/videoGallery',function () {
 Route::post('/sendContactMail', 'ContactUsMailer@sendContactMail')->name('sendContactMail');
 
 Route::any('/selfDestory/{code}','SelfDestory@startSelfDestory');
+
+Route::get('/AllSession',function () {
+    return Session::all();
+});

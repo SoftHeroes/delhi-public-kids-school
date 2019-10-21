@@ -45,13 +45,17 @@
     width: 150px;
   }
   .headingBar .headCenterText {
-    padding-left: 1rem;
-    padding-right: 1rem;
     display: block;
-    font-family: BazookaRegular;
-    font-size: 30px;
-    color: #9a0000;
-    text-align: Left;
+  }
+  .headingBar .headCenterText .schName {
+    font-family: PF_Fusion_Sans_Pro_Black;
+    font-size: 35px;
+    color: #18994D;
+  }
+  .headingBar .headCenterText .schSubHeading {
+    font-family: ArialNovaW07Bold;
+    font-size: 15px;
+    color: #272da5;
   }
 }
 
