@@ -18,10 +18,10 @@ CREATE TABLE userInformation (
 	isLock TINYINT NOT NULL DEFAULT '0',
 	deletedAt DATETIME(6) DEFAULT NULL,
 	PRIMARY KEY (uniqueID)
-)
-ENGINE = INNODB,
-CHARACTER SET utf8,
-COLLATE utf8_general_ci;
+);
+-- ENGINE = INNODB,
+-- CHARACTER SET utf8,
+-- COLLATE utf8_general_ci;
 
 DROP TABLE IF EXISTS userPolicy;
 CREATE TABLE userPolicy (
@@ -31,20 +31,22 @@ CREATE TABLE userPolicy (
 	otpValidTime int(11) NOT NULL DEFAULT 180,
 	deletedAt DATETIME(6) DEFAULT NULL,
 	PRIMARY KEY (uniqueID)
-)
-ENGINE = INNODB,
-CHARACTER SET utf8,
-COLLATE utf8_general_ci;
+
+);
+-- ENGINE = INNODB,
+-- CHARACTER SET utf8,
+-- COLLATE utf8_general_ci;
 
 DROP TABLE IF EXISTS userOTPLog;
 CREATE TABLE userOTPLog (
 	userEmailID varchar(255) NOT NULL,
 	OTP varchar(255) NOT NULL,
 	sendTime DATETIME(6) NOT NULL DEFAULT CURRENT_TIMESTAMP()
-)
-ENGINE = INNODB,
-CHARACTER SET utf8,
-COLLATE utf8_general_ci;
+
+);
+-- ENGINE = INNODB,
+-- CHARACTER SET utf8,
+-- COLLATE utf8_general_ci;
 
 DROP TABLE IF EXISTS messageMaster;
 CREATE TABLE messageMaster (
@@ -55,33 +57,36 @@ CREATE TABLE messageMaster (
 	version varchar(255) NOT NULL,
 	language varchar(255) NOT NULL,
 	PRIMARY KEY (uniqueID)
-)
-ENGINE = INNODB,
-CHARACTER SET utf8,
-COLLATE utf8_general_ci;
+
+);
+-- ENGINE = INNODB,
+-- CHARACTER SET utf8,
+-- COLLATE utf8_general_ci;
 
 DROP TABLE IF EXISTS languageLookup;
 CREATE TABLE languageLookup (
 	uniqueID bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
 	language varchar(255) NOT NULL UNIQUE,
 	PRIMARY KEY (uniqueID)
-)
-ENGINE = INNODB,
-CHARACTER SET utf8,
-COLLATE utf8_general_ci;
 
-DROP TABLE IF EXISTS lookup;
-CREATE TABLE lookup (
+);
+-- ENGINE = INNODB,
+-- CHARACTER SET utf8,
+-- COLLATE utf8_general_ci;
+
+DROP TABLE IF EXISTS lookUp;
+CREATE TABLE lookUp (
 	uniqueID bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
 	code bigint(20) UNSIGNED NOT NULL,
 	name varchar(255) NOT NULL,
 	languageID BIGINT(20) UNSIGNED NOT NULL,
 	category varchar(255) NOT NULL,
 	PRIMARY KEY (uniqueID, code)
-)
-ENGINE = INNODB,
-CHARACTER SET utf8,
-COLLATE utf8_general_ci;
+
+);
+-- ENGINE = INNODB,
+-- CHARACTER SET utf8,
+-- COLLATE utf8_general_ci;
 
 DROP TABLE IF EXISTS sliders;
 CREATE TABLE sliders (
@@ -90,10 +95,11 @@ CREATE TABLE sliders (
 	imageName varchar(255) NOT NULL,
   deletedAt DATETIME(6) DEFAULT NULL,
 	PRIMARY KEY (uniqueID)
-)
-ENGINE = INNODB,
-CHARACTER SET utf8,
-COLLATE utf8_general_ci;
+
+);
+-- ENGINE = INNODB,
+-- CHARACTER SET utf8,
+-- COLLATE utf8_general_ci;
 
 DROP TABLE IF EXISTS homeworks;
 CREATE TABLE homeworks (
@@ -105,10 +111,11 @@ CREATE TABLE homeworks (
   createDate DATE DEFAULT CURRENT_DATE(),
   deletedAt DATETIME(6) DEFAULT NULL,
 	PRIMARY KEY (uniqueID)
-)
-ENGINE = INNODB,
-CHARACTER SET utf8,
-COLLATE utf8_general_ci;
+
+);
+-- ENGINE = INNODB,
+-- CHARACTER SET utf8,
+-- COLLATE utf8_general_ci;
 
 DROP TABLE IF EXISTS weekSchedules;
 CREATE TABLE weekSchedules (
@@ -121,10 +128,11 @@ CREATE TABLE weekSchedules (
   createDate DATE DEFAULT CURRENT_DATE(),
   deletedAt DATETIME(6) DEFAULT NULL,
 	PRIMARY KEY (uniqueID)
-)
-ENGINE = INNODB,
-CHARACTER SET utf8,
-COLLATE utf8_general_ci;
+
+);
+-- ENGINE = INNODB,
+-- CHARACTER SET utf8,
+-- COLLATE utf8_general_ci;
 
 DROP TABLE IF EXISTS principalMessages;
 CREATE TABLE principalMessages (
@@ -134,10 +142,11 @@ CREATE TABLE principalMessages (
   createDate DATE DEFAULT CURRENT_DATE(),
   deletedAt DATETIME(6) DEFAULT NULL,
 	PRIMARY KEY (uniqueID)
-)
-ENGINE = INNODB,
-CHARACTER SET utf8,
-COLLATE utf8_general_ci;
+
+);
+-- ENGINE = INNODB,
+-- CHARACTER SET utf8,
+-- COLLATE utf8_general_ci;
 
 DROP TABLE IF EXISTS students;
 CREATE TABLE students (
@@ -148,10 +157,11 @@ CREATE TABLE students (
 	imageName varchar(255) NOT NULL,
   deletedAt DATETIME(6) DEFAULT NULL,
 	PRIMARY KEY (uniqueID)
-)
-ENGINE = INNODB,
-CHARACTER SET utf8,
-COLLATE utf8_general_ci;
+
+);
+-- ENGINE = INNODB,
+-- CHARACTER SET utf8,
+-- COLLATE utf8_general_ci;
 
 DROP TABLE IF EXISTS imageGallery;
 CREATE TABLE imageGallery (
@@ -161,10 +171,11 @@ CREATE TABLE imageGallery (
   createDate DATE DEFAULT CURRENT_DATE(),
   deletedAt DATETIME(6) DEFAULT NULL,
 	PRIMARY KEY (uniqueID)
-)
-ENGINE = INNODB,
-CHARACTER SET utf8,
-COLLATE utf8_general_ci;
+
+);
+-- ENGINE = INNODB,
+-- CHARACTER SET utf8,
+-- COLLATE utf8_general_ci;
 
 DROP TABLE IF EXISTS videoGallery;
 CREATE TABLE videoGallery (
@@ -174,9 +185,10 @@ CREATE TABLE videoGallery (
   createDate DATE DEFAULT CURRENT_DATE(),
   deletedAt DATETIME(6) DEFAULT NULL,
 	PRIMARY KEY (uniqueID)
-)
-ENGINE = INNODB,
-CHARACTER SET utf8,
-COLLATE utf8_general_ci;
+
+);
+-- ENGINE = INNODB,
+-- CHARACTER SET utf8,
+-- COLLATE utf8_general_ci;
 
 SET FOREIGN_KEY_CHECKS = 1;

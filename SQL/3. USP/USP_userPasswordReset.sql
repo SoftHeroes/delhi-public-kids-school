@@ -12,19 +12,19 @@ proc_Call:BEGIN
   DECLARE EXIT HANDLER FOR SQLEXCEPTION
   BEGIN
     GET CURRENT DIAGNOSTICS CONDITION 1 ErrorNumber = MYSQL_ERRNO,ErrorMessage = MESSAGE_TEXT;
-    SELECT Code,ErrorFound,Message,version,language,ErrorMessage FROM MessageMaster WHERE Code = 'ERR00000' AND language = p_Language;
+    SELECT Code,ErrorFound,Message,version,language,ErrorMessage FROM messageMaster WHERE Code = 'ERR00000' AND language = p_Language;
     ROLLBACK;
   END;
 
   -- Language check block : START
   IF (stringIsNull(p_Language)) THEN
   BEGIN
-    SELECT Code,ErrorFound,Message,version,language,ErrorMessage FROM MessageMaster WHERE Code = 'ERR00012' AND language = 'English';
+    SELECT Code,ErrorFound,Message,version,language,ErrorMessage FROM messageMaster WHERE Code = 'ERR00012' AND language = 'English';
     LEAVE proc_Call;
   END;
   ELSEIF NOT EXISTS (select 1 from languageLookup where language = p_Language) THEN
   BEGIN
-    SELECT Code,ErrorFound,Message,version,language,ErrorMessage FROM MessageMaster WHERE Code = 'ERR00009' AND language = 'English';
+    SELECT Code,ErrorFound,Message,version,language,ErrorMessage FROM messageMaster WHERE Code = 'ERR00009' AND language = 'English';
     LEAVE proc_Call;
   END;
   END IF;
@@ -33,32 +33,32 @@ proc_Call:BEGIN
   -- Input check block : START
   IF(stringIsNull(p_EmailID)) THEN
   BEGIN
-    SELECT Code,ErrorFound,Message,version,language,ErrorMessage FROM MessageMaster WHERE Code = 'ERR00019' AND language = p_Language;
+    SELECT Code,ErrorFound,Message,version,language,ErrorMessage FROM messageMaster WHERE Code = 'ERR00019' AND language = p_Language;
     LEAVE proc_Call;
   END;
   ELSEIF (NOT isEmail(p_EmailID)) THEN
   BEGIN
-    SELECT Code,ErrorFound,Message,version,language,ErrorMessage FROM MessageMaster WHERE Code = 'ERR00001' AND language = p_Language;
+    SELECT Code,ErrorFound,Message,version,language,ErrorMessage FROM messageMaster WHERE Code = 'ERR00001' AND language = p_Language;
     LEAVE proc_Call;
   END;
   ELSEIF (stringIsNull(p_Source)) THEN
   BEGIN
-    SELECT Code,ErrorFound,Message,version,language,ErrorMessage FROM MessageMaster WHERE Code = 'ERR00022' AND language = p_Language;
+    SELECT Code,ErrorFound,Message,version,language,ErrorMessage FROM messageMaster WHERE Code = 'ERR00022' AND language = p_Language;
     LEAVE proc_Call;
   END;
   ELSEIF (stringIsNull(p_NewPassword)) THEN
   BEGIN
-    SELECT Code,ErrorFound,Message,version,language,ErrorMessage FROM MessageMaster WHERE Code = 'ERR00011' AND language = p_Language;
+    SELECT Code,ErrorFound,Message,version,language,ErrorMessage FROM messageMaster WHERE Code = 'ERR00011' AND language = p_Language;
     LEAVE proc_Call;
   END;
   ELSEIF (stringIsNull(p_ConfirmPassword)) THEN
   BEGIN
-    SELECT Code,ErrorFound,Message,version,language,ErrorMessage FROM MessageMaster WHERE Code = 'ERR00017' AND language = p_Language;
+    SELECT Code,ErrorFound,Message,version,language,ErrorMessage FROM messageMaster WHERE Code = 'ERR00017' AND language = p_Language;
     LEAVE proc_Call;
   END;
   ELSEIF ( STRCMP( p_NewPassword,p_ConfirmPassword ) ) THEN
   BEGIN
-    SELECT Code,ErrorFound,Message,version,language,ErrorMessage FROM MessageMaster WHERE Code = 'ERR00013' AND language = p_Language;
+    SELECT Code,ErrorFound,Message,version,language,ErrorMessage FROM messageMaster WHERE Code = 'ERR00013' AND language = p_Language;
     LEAVE proc_Call;
   END;
   ELSEIF( isPassword(p_NewPassword) != 0 ) THEN
@@ -68,30 +68,30 @@ proc_Call:BEGIN
     SET passwordReason = isPassword(p_NewPassword);
 
     IF(passwordReason = 1) THEN  -- 1 : ERR00032 : Password length should be greater than eight.
-      SELECT Code,ErrorFound,Message,version,language,ErrorMessage FROM MessageMaster WHERE Code = 'ERR00032' AND language = p_Language;
+      SELECT Code,ErrorFound,Message,version,language,ErrorMessage FROM messageMaster WHERE Code = 'ERR00032' AND language = p_Language;
     END IF;
 
     IF(passwordReason = 2) THEN -- 2 : ERR00036 : Password must contain at least 1 lowercase letter.
-      SELECT Code,ErrorFound,Message,version,language,ErrorMessage FROM MessageMaster WHERE Code = 'ERR00036' AND language = p_Language;
+      SELECT Code,ErrorFound,Message,version,language,ErrorMessage FROM messageMaster WHERE Code = 'ERR00036' AND language = p_Language;
     END IF;
 
     IF(passwordReason = 3) THEN -- 3 : ERR00037 : Password must contain at least 1 uppercase letter.
-      SELECT Code,ErrorFound,Message,version,language,ErrorMessage FROM MessageMaster WHERE Code = 'ERR00037' AND language = p_Language;
+      SELECT Code,ErrorFound,Message,version,language,ErrorMessage FROM messageMaster WHERE Code = 'ERR00037' AND language = p_Language;
     END IF;
 
     IF(passwordReason = 4) THEN -- 4 : ERR00038 : Password must contain at least 1 digit.
-      SELECT Code,ErrorFound,Message,version,language,ErrorMessage FROM MessageMaster WHERE Code = 'ERR00038' AND language = p_Language;
+      SELECT Code,ErrorFound,Message,version,language,ErrorMessage FROM messageMaster WHERE Code = 'ERR00038' AND language = p_Language;
     END IF;
 
     IF(passwordReason = 5) THEN -- 5 : ERR00039 : Password must contain at least 1 special character form ( @,%,!,#,$,:,(,),{,},~,_ ).
-      SELECT Code,ErrorFound,Message,version,language,ErrorMessage FROM MessageMaster WHERE Code = 'ERR00039' AND language = p_Language;
+      SELECT Code,ErrorFound,Message,version,language,ErrorMessage FROM messageMaster WHERE Code = 'ERR00039' AND language = p_Language;
     END IF;
                     
     LEAVE proc_Call;
   END;
   ELSEIF NOT EXISTS(  SELECT 1 FROM lookUp WHERE name = p_Source AND category = 'source' AND languageID =  getLanguageID(p_Language)  ) THEN
   BEGIN
-    SELECT Code,ErrorFound,Message,version,language,ErrorMessage  FROM MessageMaster  WHERE Code = 'ERR00033' AND language = p_Language;
+    SELECT Code,ErrorFound,Message,version,language,ErrorMessage  FROM messageMaster  WHERE Code = 'ERR00033' AND language = p_Language;
     LEAVE proc_Call;
   END;
   END IF;
@@ -101,7 +101,7 @@ proc_Call:BEGIN
   -- User verification block : START  
     IF NOT EXISTS(  SELECT 1 FROM userInformation WHERE emailID = p_EmailID AND deletedAt IS NULL ) THEN
     BEGIN
-      SELECT Code,ErrorFound,Message,version,language,ErrorMessage  FROM MessageMaster  WHERE Code = 'ERR00042' AND language = p_Language;
+      SELECT Code,ErrorFound,Message,version,language,ErrorMessage  FROM messageMaster  WHERE Code = 'ERR00042' AND language = p_Language;
       LEAVE proc_Call;
     END;
     END IF;
@@ -110,7 +110,7 @@ proc_Call:BEGIN
   -- OTP verification block : START  
     IF NOT EXISTS(  SELECT 1 FROM userOTPLog WHERE userEmailID = p_EmailID AND OTP = p_OTP  ) THEN
     BEGIN
-      SELECT Code,ErrorFound,Message,version,language,ErrorMessage  FROM MessageMaster  WHERE Code = 'ERR00041' AND language = p_Language;
+      SELECT Code,ErrorFound,Message,version,language,ErrorMessage  FROM messageMaster  WHERE Code = 'ERR00041' AND language = p_Language;
       LEAVE proc_Call;
     END;
     END IF;
@@ -122,7 +122,7 @@ proc_Call:BEGIN
 
     IF ( CURRENT_TIMESTAMP()  >  OTPExpiryTime ) THEN
     BEGIN
-      SELECT Code,ErrorFound,Message,version,language,ErrorMessage  FROM MessageMaster  WHERE Code = 'ERR00046' AND language = p_Language;
+      SELECT Code,ErrorFound,Message,version,language,ErrorMessage  FROM messageMaster  WHERE Code = 'ERR00046' AND language = p_Language;
       LEAVE proc_Call;
     END;
     END IF;
@@ -141,7 +141,7 @@ proc_Call:BEGIN
       
     COMMIT WORK;
     
-    SELECT Code,ErrorFound,Message,version,language,ErrorMessage  FROM MessageMaster  WHERE Code = 'ERR00043' AND language = p_Language;
+    SELECT Code,ErrorFound,Message,version,language,ErrorMessage  FROM messageMaster  WHERE Code = 'ERR00043' AND language = p_Language;
   -- Password Update block : END
 
 END$$

@@ -1,0 +1,21 @@
+[MYSQL]
+DB   : wgotanfi_dpks
+User : wgotanfi_dpksUsr
+Pass : w2aLedSrNS8VHJn
+
+[cPanel]
+Link : http://209.58.168.119:2082/
+User : wgotanfi
+Pass : hB#6p4xo#XUO57
+
+[php settings]
+memory_limit=128M
+post_max_size=48M
+upload_max_filesize=48M
+
+[User]
+user     : DPSkidsAdmin
+password : Bhopal*1231!
+
+user : superUser
+password : Test123!

@@ -9,7 +9,7 @@ proc_Call:BEGIN
 DECLARE EXIT HANDLER FOR SQLEXCEPTION
     BEGIN
       GET CURRENT DIAGNOSTICS CONDITION 1 ErrorNumber = MYSQL_ERRNO,ErrorMessage = MESSAGE_TEXT;
-      SELECT Code,ErrorFound,Message,version,language,ErrorMessage FROM MessageMaster WHERE Code = 'ERR00000' AND language = 'English';
+      SELECT Code,ErrorFound,Message,version,language,ErrorMessage FROM messageMaster WHERE Code = 'ERR00000' AND language = 'English';
       ROLLBACK;
     END;
 

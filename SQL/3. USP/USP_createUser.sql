@@ -2,17 +2,17 @@ DROP procedure IF EXISTS `USP_createUser`;
 
 DELIMITER $$
 CREATE PROCEDURE `USP_createUser` ( 
-    IN p_Password VARCHAR(255),
-    IN p_ConfirmPassword VARCHAR(255),
-    IN p_FirstName VARCHAR(255),
-    IN p_MiddleName VARCHAR(255),
-    IN p_LastName VARCHAR(255),
-    IN p_EmailID VARCHAR(255),
-    IN p_PhoneNumber VARCHAR(255),
-    IN p_Username  VARCHAR(255),
-    IN p_UserPolicyID INT,
-    IN p_Language VARCHAR(255),
-    IN p_Source VARCHAR(255)
+    IN p_Password VARCHAR(255) COLLATE utf8_unicode_ci,
+    IN p_ConfirmPassword VARCHAR(255) COLLATE utf8_unicode_ci,
+    IN p_FirstName VARCHAR(255) COLLATE utf8_unicode_ci,
+    IN p_MiddleName VARCHAR(255) COLLATE utf8_unicode_ci,
+    IN p_LastName VARCHAR(255) COLLATE utf8_unicode_ci,
+    IN p_EmailID VARCHAR(255) COLLATE utf8_unicode_ci,
+    IN p_PhoneNumber VARCHAR(255) COLLATE utf8_unicode_ci,
+    IN p_Username  VARCHAR(255) COLLATE utf8_unicode_ci,
+    IN p_UserPolicyID INT COLLATE utf8_unicode_ci,
+    IN p_Language VARCHAR(255)COLLATE utf8_unicode_ci,
+    IN p_Source VARCHAR(255) COLLATE utf8_unicode_ci
   )
 proc_Call:BEGIN
 	DECLARE RowCount INT DEFAULT 0;
@@ -24,7 +24,7 @@ proc_Call:BEGIN
   DECLARE EXIT HANDLER FOR SQLEXCEPTION
     BEGIN
       GET CURRENT DIAGNOSTICS CONDITION 1 ErrorNumber = MYSQL_ERRNO,ErrorMessage = MESSAGE_TEXT;
-      SELECT `Code`,`ErrorFound`,`Message`,`version`,`language`,ErrorMessage,p_PhoneNumber CustomerPhoneNumber,p_EmailID CustomerEmailID,p_Username Username,op_UUID as CustomerUUID FROM `MessageMaster` WHERE `Code` = 'ERR00000' AND `language` = p_Language;
+      SELECT `Code`,`ErrorFound`,`Message`,`version`,`language`,ErrorMessage,p_PhoneNumber CustomerPhoneNumber,p_EmailID CustomerEmailID,p_Username Username,op_UUID as CustomerUUID FROM `messageMaster` WHERE `Code` = 'ERR00000' AND `language` = p_Language;
       ROLLBACK;
     END;
 
@@ -32,12 +32,12 @@ proc_Call:BEGIN
   -- Language check block : START
   IF (stringIsNull(p_Language)) THEN
   BEGIN
-    SELECT `Code`,`ErrorFound`,`Message`,`version`,`language`,ErrorMessage,p_PhoneNumber CustomerPhoneNumber,p_EmailID CustomerEmailID,p_Username Username,op_UUID as CustomerUUID FROM `MessageMaster` WHERE `Code` = 'ERR00012' AND `language` = 'English';
+    SELECT `Code`,`ErrorFound`,`Message`,`version`,`language`,ErrorMessage,p_PhoneNumber CustomerPhoneNumber,p_EmailID CustomerEmailID,p_Username Username,op_UUID as CustomerUUID FROM `messageMaster` WHERE `Code` = 'ERR00012' AND `language` = 'English';
     LEAVE proc_Call;
   END;
   ELSEIF NOT EXISTS (select 1 from languageLookup where language = p_Language) THEN
   BEGIN
-    SELECT `Code`,`ErrorFound`,`Message`,`version`,`language`,ErrorMessage,p_PhoneNumber CustomerPhoneNumber,p_EmailID CustomerEmailID,p_Username Username,op_UUID as CustomerUUID FROM `MessageMaster` WHERE `Code` = 'ERR00009' AND `language` = 'English';
+    SELECT `Code`,`ErrorFound`,`Message`,`version`,`language`,ErrorMessage,p_PhoneNumber CustomerPhoneNumber,p_EmailID CustomerEmailID,p_Username Username,op_UUID as CustomerUUID FROM `messageMaster` WHERE `Code` = 'ERR00009' AND `language` = 'English';
     LEAVE proc_Call;
   END;
   END IF;
@@ -46,47 +46,47 @@ proc_Call:BEGIN
   -- Input check block : START
   IF(stringIsNull(p_Password)) THEN
   BEGIN
-    SELECT `Code`,`ErrorFound`,`Message`,`version`,`language`,ErrorMessage,p_PhoneNumber CustomerPhoneNumber,p_EmailID CustomerEmailID,p_Username Username,op_UUID as CustomerUUID FROM `MessageMaster` WHERE `Code` = 'ERR00011' AND `language` = p_Language;
+    SELECT `Code`,`ErrorFound`,`Message`,`version`,`language`,ErrorMessage,p_PhoneNumber CustomerPhoneNumber,p_EmailID CustomerEmailID,p_Username Username,op_UUID as CustomerUUID FROM `messageMaster` WHERE `Code` = 'ERR00011' AND `language` = p_Language;
     LEAVE proc_Call;
   END;
   ELSEIF(stringIsNull(p_ConfirmPassword)) THEN
   BEGIN
-    SELECT `Code`,`ErrorFound`,`Message`,`version`,`language`,ErrorMessage,p_PhoneNumber CustomerPhoneNumber,p_EmailID CustomerEmailID,p_Username Username,op_UUID as CustomerUUID FROM `MessageMaster` WHERE `Code` = 'ERR00017' AND `language` = p_Language;
+    SELECT `Code`,`ErrorFound`,`Message`,`version`,`language`,ErrorMessage,p_PhoneNumber CustomerPhoneNumber,p_EmailID CustomerEmailID,p_Username Username,op_UUID as CustomerUUID FROM `messageMaster` WHERE `Code` = 'ERR00017' AND `language` = p_Language;
     LEAVE proc_Call;
   END;
   ELSEIF(stringIsNull(p_FirstName)) THEN
   BEGIN
-    SELECT `Code`,`ErrorFound`,`Message`,`version`,`language`,ErrorMessage,p_PhoneNumber CustomerPhoneNumber,p_EmailID CustomerEmailID,p_Username Username,op_UUID as CustomerUUID FROM `MessageMaster` WHERE `Code` = 'ERR00015' AND `language` = p_Language;
+    SELECT `Code`,`ErrorFound`,`Message`,`version`,`language`,ErrorMessage,p_PhoneNumber CustomerPhoneNumber,p_EmailID CustomerEmailID,p_Username Username,op_UUID as CustomerUUID FROM `messageMaster` WHERE `Code` = 'ERR00015' AND `language` = p_Language;
     LEAVE proc_Call;
   END;
   ELSEIF(stringIsNull(p_LastName)) THEN
   BEGIN
-    SELECT `Code`,`ErrorFound`,`Message`,`version`,`language`,ErrorMessage,p_PhoneNumber CustomerPhoneNumber,p_EmailID CustomerEmailID,p_Username Username,op_UUID as CustomerUUID FROM `MessageMaster` WHERE `Code` = 'ERR00016' AND `language` = p_Language;
+    SELECT `Code`,`ErrorFound`,`Message`,`version`,`language`,ErrorMessage,p_PhoneNumber CustomerPhoneNumber,p_EmailID CustomerEmailID,p_Username Username,op_UUID as CustomerUUID FROM `messageMaster` WHERE `Code` = 'ERR00016' AND `language` = p_Language;
     LEAVE proc_Call;
   END;
   ELSEIF(stringIsNull(p_EmailID)) THEN
   BEGIN
-    SELECT `Code`,`ErrorFound`,`Message`,`version`,`language`,ErrorMessage,p_PhoneNumber CustomerPhoneNumber,p_EmailID CustomerEmailID,p_Username Username,op_UUID as CustomerUUID FROM `MessageMaster` WHERE `Code` = 'ERR00018' AND `language` = p_Language;
+    SELECT `Code`,`ErrorFound`,`Message`,`version`,`language`,ErrorMessage,p_PhoneNumber CustomerPhoneNumber,p_EmailID CustomerEmailID,p_Username Username,op_UUID as CustomerUUID FROM `messageMaster` WHERE `Code` = 'ERR00018' AND `language` = p_Language;
     LEAVE proc_Call;
   END;
   ELSEIF(stringIsNull(p_PhoneNumber)) THEN
   BEGIN
-    SELECT `Code`,`ErrorFound`,`Message`,`version`,`language`,ErrorMessage,p_PhoneNumber CustomerPhoneNumber,p_EmailID CustomerEmailID,p_Username Username,op_UUID as CustomerUUID FROM `MessageMaster` WHERE `Code` = 'ERR00019' AND `language` = p_Language;
+    SELECT `Code`,`ErrorFound`,`Message`,`version`,`language`,ErrorMessage,p_PhoneNumber CustomerPhoneNumber,p_EmailID CustomerEmailID,p_Username Username,op_UUID as CustomerUUID FROM `messageMaster` WHERE `Code` = 'ERR00019' AND `language` = p_Language;
     LEAVE proc_Call;
   END;
   ELSEIF(stringIsNull(p_userPolicyID)) THEN
   BEGIN
-    SELECT `Code`,`ErrorFound`,`Message`,`version`,`language`,ErrorMessage,p_PhoneNumber CustomerPhoneNumber,p_EmailID CustomerEmailID,p_Username Username,op_UUID as CustomerUUID FROM `MessageMaster` WHERE `Code` = 'ERR00005' AND `language` = p_Language;
+    SELECT `Code`,`ErrorFound`,`Message`,`version`,`language`,ErrorMessage,p_PhoneNumber CustomerPhoneNumber,p_EmailID CustomerEmailID,p_Username Username,op_UUID as CustomerUUID FROM `messageMaster` WHERE `Code` = 'ERR00005' AND `language` = p_Language;
     LEAVE proc_Call;
   END;
   ELSEIF(stringIsNull(p_Username)) THEN
   BEGIN
-    SELECT `Code`,`ErrorFound`,`Message`,`version`,`language`,ErrorMessage,p_PhoneNumber CustomerPhoneNumber,p_EmailID CustomerEmailID,p_Username Username,op_UUID as CustomerUUID FROM `MessageMaster` WHERE Code = 'ERR00044' AND language = p_Language;
+    SELECT `Code`,`ErrorFound`,`Message`,`version`,`language`,ErrorMessage,p_PhoneNumber CustomerPhoneNumber,p_EmailID CustomerEmailID,p_Username Username,op_UUID as CustomerUUID FROM `messageMaster` WHERE Code = 'ERR00044' AND language = p_Language;
     LEAVE proc_Call;
   END;
   ELSEIF (STRCMP( p_Password,p_ConfirmPassword )) THEN
   BEGIN
-    SELECT `Code`,`ErrorFound`,`Message`,`version`,`language`,ErrorMessage,p_PhoneNumber CustomerPhoneNumber,p_EmailID CustomerEmailID,p_Username Username,op_UUID as CustomerUUID FROM `MessageMaster` WHERE `Code` = 'ERR00013' AND `language` = p_Language;
+    SELECT `Code`,`ErrorFound`,`Message`,`version`,`language`,ErrorMessage,p_PhoneNumber CustomerPhoneNumber,p_EmailID CustomerEmailID,p_Username Username,op_UUID as CustomerUUID FROM `messageMaster` WHERE `Code` = 'ERR00013' AND `language` = p_Language;
     LEAVE proc_Call;
   END;
   ELSEIF( isPassword(p_Password) != 0 ) THEN
@@ -96,30 +96,30 @@ proc_Call:BEGIN
     SET passwordReason = isPassword(p_Password);
 
     IF(passwordReason = 1) THEN  -- 1 : ERR00032 : Password length should be greater than eight.
-      SELECT `Code`,`ErrorFound`,`Message`,`version`,`language`,ErrorMessage,p_PhoneNumber CustomerPhoneNumber,p_EmailID CustomerEmailID,p_Username Username,op_UUID as CustomerUUID FROM `MessageMaster` WHERE `Code` = 'ERR00032' AND `language` = p_Language;
+      SELECT `Code`,`ErrorFound`,`Message`,`version`,`language`,ErrorMessage,p_PhoneNumber CustomerPhoneNumber,p_EmailID CustomerEmailID,p_Username Username,op_UUID as CustomerUUID FROM `messageMaster` WHERE `Code` = 'ERR00032' AND `language` = p_Language;
     END IF;
 
     IF(passwordReason = 2) THEN -- 2 : ERR00036 : Password must contain at least 1 lowercase letter.
-      SELECT `Code`,`ErrorFound`,`Message`,`version`,`language`,ErrorMessage,p_PhoneNumber CustomerPhoneNumber,p_EmailID CustomerEmailID,p_Username Username,op_UUID as CustomerUUID FROM `MessageMaster` WHERE `Code` = 'ERR00036' AND `language` = p_Language;
+      SELECT `Code`,`ErrorFound`,`Message`,`version`,`language`,ErrorMessage,p_PhoneNumber CustomerPhoneNumber,p_EmailID CustomerEmailID,p_Username Username,op_UUID as CustomerUUID FROM `messageMaster` WHERE `Code` = 'ERR00036' AND `language` = p_Language;
     END IF;
 
     IF(passwordReason = 3) THEN -- 3 : ERR00037 : Password must contain at least 1 uppercase letter.
-      SELECT `Code`,`ErrorFound`,`Message`,`version`,`language`,ErrorMessage,p_PhoneNumber CustomerPhoneNumber,p_EmailID CustomerEmailID,p_Username Username,op_UUID as CustomerUUID FROM `MessageMaster` WHERE `Code` = 'ERR00037' AND `language` = p_Language;
+      SELECT `Code`,`ErrorFound`,`Message`,`version`,`language`,ErrorMessage,p_PhoneNumber CustomerPhoneNumber,p_EmailID CustomerEmailID,p_Username Username,op_UUID as CustomerUUID FROM `messageMaster` WHERE `Code` = 'ERR00037' AND `language` = p_Language;
     END IF;
 
     IF(passwordReason = 4) THEN -- 4 : ERR00038 : Password must contain at least 1 digit.
-      SELECT `Code`,`ErrorFound`,`Message`,`version`,`language`,ErrorMessage,p_PhoneNumber CustomerPhoneNumber,p_EmailID CustomerEmailID,p_Username Username,op_UUID as CustomerUUID FROM `MessageMaster` WHERE `Code` = 'ERR00038' AND `language` = p_Language;
+      SELECT `Code`,`ErrorFound`,`Message`,`version`,`language`,ErrorMessage,p_PhoneNumber CustomerPhoneNumber,p_EmailID CustomerEmailID,p_Username Username,op_UUID as CustomerUUID FROM `messageMaster` WHERE `Code` = 'ERR00038' AND `language` = p_Language;
     END IF;
 
     IF(passwordReason = 5) THEN -- 5 : ERR00039 : Password must contain at least 1 special character form ( @,%,!,#,$,:,(,),{,},~,_ ).
-      SELECT `Code`,`ErrorFound`,`Message`,`version`,`language`,ErrorMessage,p_PhoneNumber CustomerPhoneNumber,p_EmailID CustomerEmailID,p_Username Username,op_UUID as CustomerUUID FROM `MessageMaster` WHERE `Code` = 'ERR00039' AND `language` = p_Language;
+      SELECT `Code`,`ErrorFound`,`Message`,`version`,`language`,ErrorMessage,p_PhoneNumber CustomerPhoneNumber,p_EmailID CustomerEmailID,p_Username Username,op_UUID as CustomerUUID FROM `messageMaster` WHERE `Code` = 'ERR00039' AND `language` = p_Language;
     END IF;
                     
     LEAVE proc_Call;
   END;
   ELSEIF (stringIsNull(p_Source)) THEN
   BEGIN
-    SELECT `Code`,`ErrorFound`,`Message`,`version`,`language`,ErrorMessage,p_PhoneNumber CustomerPhoneNumber,p_EmailID CustomerEmailID,p_Username Username,op_UUID as CustomerUUID FROM `MessageMaster` WHERE `Code` = 'ERR00022' AND `language` = p_Language;
+    SELECT `Code`,`ErrorFound`,`Message`,`version`,`language`,ErrorMessage,p_PhoneNumber CustomerPhoneNumber,p_EmailID CustomerEmailID,p_Username Username,op_UUID as CustomerUUID FROM `messageMaster` WHERE `Code` = 'ERR00022' AND `language` = p_Language;
     LEAVE proc_Call;
   END;
   END IF;
@@ -128,7 +128,7 @@ proc_Call:BEGIN
 	-- Email format valdation block : START
   IF( !isEmail(p_EmailID) ) THEN 
   BEGIN
-    SELECT `Code`,`ErrorFound`,`Message`,`version`,`language`,ErrorMessage,p_PhoneNumber CustomerPhoneNumber,p_EmailID CustomerEmailID,p_Username Username,op_UUID as CustomerUUID FROM `MessageMaster` WHERE `Code` = 'ERR00001' AND `language` = p_Language;
+    SELECT `Code`,`ErrorFound`,`Message`,`version`,`language`,ErrorMessage,p_PhoneNumber CustomerPhoneNumber,p_EmailID CustomerEmailID,p_Username Username,op_UUID as CustomerUUID FROM `messageMaster` WHERE `Code` = 'ERR00001' AND `language` = p_Language;
     LEAVE proc_Call;
   END;
   -- Email format valdation block : END
@@ -136,7 +136,7 @@ proc_Call:BEGIN
   -- Phone Number valdation block : START
   ELSEIF(  !isNumeric(p_PhoneNumber) OR LENGTH(p_PhoneNumber) != 10 ) THEN
   BEGIN
-    SELECT `Code`,`ErrorFound`,`Message`,`version`,`language`,ErrorMessage,p_PhoneNumber CustomerPhoneNumber,p_EmailID CustomerEmailID,p_Username Username,op_UUID as CustomerUUID FROM `MessageMaster` WHERE `Code` = 'ERR00002' AND `language` = p_Language;
+    SELECT `Code`,`ErrorFound`,`Message`,`version`,`language`,ErrorMessage,p_PhoneNumber CustomerPhoneNumber,p_EmailID CustomerEmailID,p_Username Username,op_UUID as CustomerUUID FROM `messageMaster` WHERE `Code` = 'ERR00002' AND `language` = p_Language;
     LEAVE proc_Call;
   END;
   -- Phone Number valdation block : END
@@ -146,7 +146,7 @@ proc_Call:BEGIN
   SET RowCount = ( SELECT 1 FROM `userPolicy` WHERE uniqueID = p_userPolicyID);
   IF(  RowCount = 0 OR RowCount IS NULL ) THEN
   BEGIN
-    SELECT `Code`,`ErrorFound`,`Message`,`version`,`language`,ErrorMessage,p_PhoneNumber CustomerPhoneNumber,p_EmailID CustomerEmailID,p_Username Username,op_UUID as CustomerUUID FROM `MessageMaster` WHERE `Code` = 'ERR00034' AND `language` = p_Language;
+    SELECT `Code`,`ErrorFound`,`Message`,`version`,`language`,ErrorMessage,p_PhoneNumber CustomerPhoneNumber,p_EmailID CustomerEmailID,p_Username Username,op_UUID as CustomerUUID FROM `messageMaster` WHERE `Code` = 'ERR00034' AND `language` = p_Language;
     LEAVE proc_Call;
   END;
   END IF;
@@ -157,7 +157,7 @@ proc_Call:BEGIN
     
   IF(RowCount > 0 ) THEN 
   BEGIN
-    SELECT `Code`,`ErrorFound`,`Message`,`version`,`language`,ErrorMessage,p_PhoneNumber CustomerPhoneNumber,p_EmailID CustomerEmailID,p_Username Username,op_UUID as CustomerUUID FROM `MessageMaster` WHERE `Code` = 'ERR00004' AND `language` = p_Language;
+    SELECT `Code`,`ErrorFound`,`Message`,`version`,`language`,ErrorMessage,p_PhoneNumber CustomerPhoneNumber,p_EmailID CustomerEmailID,p_Username Username,op_UUID as CustomerUUID FROM `messageMaster` WHERE `Code` = 'ERR00004' AND `language` = p_Language;
     LEAVE proc_Call;
   END;
   END IF;
@@ -166,7 +166,7 @@ proc_Call:BEGIN
     
   IF(RowCount > 0 ) THEN 
   BEGIN
-    SELECT `Code`,`ErrorFound`,`Message`,`version`,`language`,ErrorMessage,p_PhoneNumber CustomerPhoneNumber,p_EmailID CustomerEmailID,p_Username Username,op_UUID as CustomerUUID FROM `MessageMaster` WHERE `Code` = 'ERR00003' AND `language` = p_Language;
+    SELECT `Code`,`ErrorFound`,`Message`,`version`,`language`,ErrorMessage,p_PhoneNumber CustomerPhoneNumber,p_EmailID CustomerEmailID,p_Username Username,op_UUID as CustomerUUID FROM `messageMaster` WHERE `Code` = 'ERR00003' AND `language` = p_Language;
     LEAVE proc_Call;
   END;
   END IF;
@@ -176,7 +176,7 @@ proc_Call:BEGIN
     
   IF(RowCount > 0 ) THEN 
   BEGIN
-    SELECT Code,ErrorFound,Message,version,language,ErrorMessage,p_PhoneNumber UserPhoneNumber,p_EmailID UserEmailID,p_Username Username ,op_UUID as UserUUID FROM MessageMaster WHERE Code = 'ERR00045' AND language = p_Language;
+    SELECT Code,ErrorFound,Message,version,language,ErrorMessage,p_PhoneNumber UserPhoneNumber,p_EmailID UserEmailID,p_Username Username ,op_UUID as UserUUID FROM messageMaster WHERE Code = 'ERR00045' AND language = p_Language;
     LEAVE proc_Call;
   END;
   END IF;
@@ -214,7 +214,7 @@ proc_Call:BEGIN
   COMMIT WORK;
   -- Customer Account creation block : END
 
-  SELECT `Code`,`ErrorFound`,`Message`,`version`,`language`,ErrorMessage,p_PhoneNumber CustomerPhoneNumber,p_EmailID CustomerEmailID,p_Username Username,op_UUID as CustomerUUID FROM `MessageMaster` WHERE `Code` = 'ERR00035' AND `language` = p_Language;
+  SELECT `Code`,`ErrorFound`,`Message`,`version`,`language`,ErrorMessage,p_PhoneNumber CustomerPhoneNumber,p_EmailID CustomerEmailID,p_Username Username,op_UUID as CustomerUUID FROM `messageMaster` WHERE `Code` = 'ERR00035' AND `language` = p_Language;
 
 END$$
 

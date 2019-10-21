@@ -13,19 +13,19 @@ proc_Call:BEGIN
   DECLARE EXIT HANDLER FOR SQLEXCEPTION
     BEGIN
       GET CURRENT DIAGNOSTICS CONDITION 1 ErrorNumber = MYSQL_ERRNO,ErrorMessage = MESSAGE_TEXT;
-      SELECT `Code`,`ErrorFound`,`Message`,`version`,`language`,ErrorMessage,op_UserEmail UserEmail,op_UserPhoneNumber UserPhoneNumber,op_Username Username FROM `MessageMaster` WHERE `Code` = 'ERR00000' AND `language` = p_Language;
+      SELECT `Code`,`ErrorFound`,`Message`,`version`,`language`,ErrorMessage,op_UserEmail UserEmail,op_UserPhoneNumber UserPhoneNumber,op_Username Username FROM `messageMaster` WHERE `Code` = 'ERR00000' AND `language` = p_Language;
       ROLLBACK;
     END;
 
   -- Language check block : START
   IF ( stringIsNull(p_Language)) THEN
   BEGIN
-    SELECT `Code`,`ErrorFound`,`Message`,`version`,`language`,ErrorMessage,op_UserEmail UserEmail,op_UserPhoneNumber UserPhoneNumber,op_Username Username FROM `MessageMaster` WHERE `Code` = 'ERR00012' AND `language` = 'English';
+    SELECT `Code`,`ErrorFound`,`Message`,`version`,`language`,ErrorMessage,op_UserEmail UserEmail,op_UserPhoneNumber UserPhoneNumber,op_Username Username FROM `messageMaster` WHERE `Code` = 'ERR00012' AND `language` = 'English';
     LEAVE proc_Call;
   END;
   ELSEIF NOT EXISTS (select 1 from languageLookup where language = p_Language) THEN
   BEGIN
-    SELECT `Code`,`ErrorFound`,`Message`,`version`,`language`,ErrorMessage,op_UserEmail UserEmail,op_UserPhoneNumber UserPhoneNumber,op_Username Username FROM `MessageMaster` WHERE `Code` = 'ERR00009' AND `language` = 'English';
+    SELECT `Code`,`ErrorFound`,`Message`,`version`,`language`,ErrorMessage,op_UserEmail UserEmail,op_UserPhoneNumber UserPhoneNumber,op_Username Username FROM `messageMaster` WHERE `Code` = 'ERR00009' AND `language` = 'English';
     LEAVE proc_Call;
   END;
   END IF;
@@ -34,22 +34,22 @@ proc_Call:BEGIN
   -- Input check block : START
   IF(stringIsNull(p_op_Username)) THEN
   BEGIN
-    SELECT `Code`,`ErrorFound`,`Message`,`version`,`language`,ErrorMessage,op_UserEmail UserEmail,op_UserPhoneNumber UserPhoneNumber,op_Username Username FROM `MessageMaster` WHERE `Code` = 'ERR00010' AND `language` = p_Language;
+    SELECT `Code`,`ErrorFound`,`Message`,`version`,`language`,ErrorMessage,op_UserEmail UserEmail,op_UserPhoneNumber UserPhoneNumber,op_Username Username FROM `messageMaster` WHERE `Code` = 'ERR00010' AND `language` = p_Language;
     LEAVE proc_Call;
   END;
   ELSEIF (stringIsNull(p_Source)) THEN
   BEGIN
-    SELECT `Code`,`ErrorFound`,`Message`,`version`,`language`,ErrorMessage,op_UserEmail UserEmail,op_UserPhoneNumber UserPhoneNumber,op_Username Username FROM `MessageMaster` WHERE `Code` = 'ERR00022' AND `language` = p_Language;
+    SELECT `Code`,`ErrorFound`,`Message`,`version`,`language`,ErrorMessage,op_UserEmail UserEmail,op_UserPhoneNumber UserPhoneNumber,op_Username Username FROM `messageMaster` WHERE `Code` = 'ERR00022' AND `language` = p_Language;
     LEAVE proc_Call;
   END;
   ELSEIF (stringIsNull(p_Password)) THEN
   BEGIN
-    SELECT `Code`,`ErrorFound`,`Message`,`version`,`language`,ErrorMessage,op_UserEmail UserEmail,op_UserPhoneNumber UserPhoneNumber,op_Username Username FROM `MessageMaster` WHERE `Code` = 'ERR00011' AND `language` = p_Language;
+    SELECT `Code`,`ErrorFound`,`Message`,`version`,`language`,ErrorMessage,op_UserEmail UserEmail,op_UserPhoneNumber UserPhoneNumber,op_Username Username FROM `messageMaster` WHERE `Code` = 'ERR00011' AND `language` = p_Language;
     LEAVE proc_Call;
   END;
   ELSEIF NOT EXISTS(  SELECT 1 FROM lookUp WHERE name = p_Source AND category = 'source' AND languageID = getLanguageID(p_Language)  ) THEN
   BEGIN
-    SELECT `Code`,`ErrorFound`,`Message`,`version`,`language`,ErrorMessage,op_UserEmail,op_UserPhoneNumber,op_Username  FROM `MessageMaster`  WHERE `Code` = 'ERR00033' AND `language` = p_Language;
+    SELECT `Code`,`ErrorFound`,`Message`,`version`,`language`,ErrorMessage,op_UserEmail,op_UserPhoneNumber,op_Username  FROM `messageMaster`  WHERE `Code` = 'ERR00033' AND `language` = p_Language;
     LEAVE proc_Call;
   END;
   END IF;
@@ -60,7 +60,7 @@ proc_Call:BEGIN
 
   IF EXISTS(SELECT 1 FROM `userInformation` WHERE ( emailID = p_op_Username OR phoneNumber = p_op_Username OR username = p_op_Username ) AND isLock = 1) THEN
   BEGIN
-    SELECT `Code`,`ErrorFound`,`Message`,`version`,`language`,ErrorMessage,op_UserEmail UserEmail,op_UserPhoneNumber UserPhoneNumber,op_Username Username FROM `MessageMaster` WHERE `Code` = 'ERR00071' AND `language` = p_Language;
+    SELECT `Code`,`ErrorFound`,`Message`,`version`,`language`,ErrorMessage,op_UserEmail UserEmail,op_UserPhoneNumber UserPhoneNumber,op_Username Username FROM `messageMaster` WHERE `Code` = 'ERR00071' AND `language` = p_Language;
     LEAVE proc_Call;   
   END;
   END IF;
@@ -69,7 +69,7 @@ proc_Call:BEGIN
 
   IF(stringIsNull(op_UserEmail)) THEN
   BEGIN
-    SELECT `Code`,`ErrorFound`,`Message`,`version`,`language`,ErrorMessage,op_UserEmail UserEmail,op_UserPhoneNumber UserPhoneNumber,op_Username Username FROM `MessageMaster` WHERE `Code` = 'ERR00008' AND `language` = p_Language;
+    SELECT `Code`,`ErrorFound`,`Message`,`version`,`language`,ErrorMessage,op_UserEmail UserEmail,op_UserPhoneNumber UserPhoneNumber,op_Username Username FROM `messageMaster` WHERE `Code` = 'ERR00008' AND `language` = p_Language;
     LEAVE proc_Call;
   END;
   END IF;
@@ -78,9 +78,9 @@ proc_Call:BEGIN
   SET RowCount = ( SELECT 1 FROM `userInformation` WHERE emailID = op_UserEmail AND password = AES_ENCRYPT(p_Password,op_UserEmail) );
   
   IF(RowCount > 0 ) THEN
-    SELECT `Code`,`ErrorFound`,`Message`,`version`,`language`,ErrorMessage,op_UserEmail UserEmail,op_UserPhoneNumber UserPhoneNumber,op_Username Username FROM `MessageMaster` WHERE `Code` = 'ERR00006' AND `language` = p_Language;
+    SELECT `Code`,`ErrorFound`,`Message`,`version`,`language`,ErrorMessage,op_UserEmail UserEmail,op_UserPhoneNumber UserPhoneNumber,op_Username Username FROM `messageMaster` WHERE `Code` = 'ERR00006' AND `language` = p_Language;
   ELSE
-    SELECT `Code`,`ErrorFound`,`Message`,`version`,`language`,ErrorMessage,op_UserEmail UserEmail,op_UserPhoneNumber UserPhoneNumber,op_Username Username FROM `MessageMaster` WHERE `Code` = 'ERR00008' AND `language` = p_Language;
+    SELECT `Code`,`ErrorFound`,`Message`,`version`,`language`,ErrorMessage,op_UserEmail UserEmail,op_UserPhoneNumber UserPhoneNumber,op_Username Username FROM `messageMaster` WHERE `Code` = 'ERR00008' AND `language` = p_Language;
   END IF;
   -- Credentials validation block : END
 END$$
