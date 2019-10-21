@@ -35,10 +35,11 @@ class Login extends Controller
         if (!isEmpty($response[0]->ErrorFound)) {
             $ErrorFound = trim($response[0]->ErrorFound);
         }
-        DB::select("call USP_markLogin(" . $username . ",'" . $ErrorFound . "');");
+
+        DB::statement("call USP_markLogin(" . $username . ",'" . $ErrorFound . "');");
         if ($ErrorFound == "NO") {
 
-            $request->session()->put([ $request->ip().'DPKS' => ['user' => $response[0]->Username ]]); // creating login session
+            $request->session()->put([ str_replace(".","_",$request->ip()).'DPKS' => ['user' => $response[0]->Username ]]); // creating login session
 
             return redirect()->route('vDashboard');
         } else {
@@ -48,7 +49,7 @@ class Login extends Controller
     }
 
     public function userLogout(Request $request){
-        $request->session()->forget($request->ip().'DPKS'); // removing user session
+        $request->session()->forget(str_replace(".","_",$request->ip()).'DPKS'); // removing user session
         return redirect()->route('vAdmin');
     }
 }

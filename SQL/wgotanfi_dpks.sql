@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Oct 21, 2019 at 06:06 PM
+-- Generation Time: Oct 21, 2019 at 07:41 PM
 -- Server version: 10.2.27-MariaDB-cll-lve
 -- PHP Version: 7.2.7
 
@@ -26,7 +26,7 @@ DELIMITER $$
 --
 -- Procedures
 --
-CREATE DEFINER=`wgotanfi`@`localhost` PROCEDURE `USP_createUser` (IN `p_Password` VARCHAR(255) COLLATE utf8_unicode_ci, IN `p_ConfirmPassword` VARCHAR(255) COLLATE utf8_unicode_ci, IN `p_FirstName` VARCHAR(255) COLLATE utf8_unicode_ci, IN `p_MiddleName` VARCHAR(255) COLLATE utf8_unicode_ci, IN `p_LastName` VARCHAR(255) COLLATE utf8_unicode_ci, IN `p_EmailID` VARCHAR(255) COLLATE utf8_unicode_ci, IN `p_PhoneNumber` VARCHAR(255) COLLATE utf8_unicode_ci, IN `p_Username` VARCHAR(255) COLLATE utf8_unicode_ci, IN `p_UserPolicyID` INT COLLATE utf8_unicode_ci, IN `p_Language` VARCHAR(255) COLLATE utf8_unicode_ci, IN `p_Source` VARCHAR(255) COLLATE utf8_unicode_ci)  proc_Call:BEGIN
+CREATE DEFINER=`wgotanfi`@`localhost` PROCEDURE `USP_createUser` (IN `p_Password` VARCHAR(255), IN `p_ConfirmPassword` VARCHAR(255), IN `p_FirstName` VARCHAR(255), IN `p_MiddleName` VARCHAR(255), IN `p_LastName` VARCHAR(255), IN `p_EmailID` VARCHAR(255), IN `p_PhoneNumber` VARCHAR(255), IN `p_Username` VARCHAR(255), IN `p_UserPolicyID` INT, IN `p_Language` VARCHAR(255), IN `p_Source` VARCHAR(255))  proc_Call:BEGIN
 	DECLARE RowCount INT DEFAULT 0;
   DECLARE ErrorNumber INT;
   DECLARE ErrorLine INT;
@@ -250,7 +250,7 @@ DECLARE EXIT HANDLER FOR SQLEXCEPTION
     BEGIN
       START TRANSACTION;
     
-        UPDATE userinformation SET InvaildUpdateAttemptsCount = 0
+        UPDATE userInformation SET InvaildUpdateAttemptsCount = 0
           WHERE username = p_username OR phoneNumber = p_username OR emailID = p_username ;
       
       COMMIT WORK;
@@ -259,7 +259,7 @@ DECLARE EXIT HANDLER FOR SQLEXCEPTION
 
       START TRANSACTION;
     
-      UPDATE userinformation UserInfo
+      UPDATE userInformation UserInfo
         JOIN userpolicy UP ON UP.uniqueID = UserInfo.UserPolicyID
         SET UserInfo.InvaildUpdateAttemptsCount =  ( UserInfo.InvaildUpdateAttemptsCount + 1 ),
         UserInfo.isLock = 
@@ -804,6 +804,15 @@ CREATE TABLE `principalMessages` (
   `deletedAt` datetime(6) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Dumping data for table `principalMessages`
+--
+
+INSERT INTO `principalMessages` (`uniqueID`, `title`, `subtitle`, `createDate`, `deletedAt`) VALUES
+(1, 'We\'re conducting Parents Teacher\'s meet on 19th Oct.', 'Dear Parents,\r\n\r\nWe\'re conducting Parents Teacher\'s meet on 19th Oct.From 10 AM to 12 PM. Please be on time. \r\n                                                                                                                          &\r\nWe are celebrating DIWALI FESTIVAL on 22nd Oct. in the school with activities like - Diya decoration, Rangoli making & Dance competition in the school for KIDS AND MOTHERS. The timings will be from 10 AM - 12 PM. Please bring all the stuff related to competition. Please, ensure PARTICIPATION.\r\n\r\nThank you.', '2019-10-21', '2019-10-21 19:36:53.000000'),
+(2, 'Parents Teacher\'s meet on 19th Oct.', 'Dear Parents,\r\n\r\nWe\'re conducting Parents Teacher\'s meet on 19th Oct.From 10 AM to 12 PM. Please be on time. \r\n                                                                                                                          &\r\nWe are celebrating DIWALI FESTIVAL on 22nd Oct. in the school with activities like - Diya decoration, Rangoli making & Dance competition in the school for KIDS AND MOTHERS. The timings will be from 10 AM - 12 PM. Please bring all the stuff related to competition. Please, ensure PARTICIPATION.\r\n\r\nThank you.', '2019-10-21', '2019-10-21 19:38:28.000000'),
+(3, 'Parents Teacher\'s meet on 19th Oct.', 'Dear Parents,\r\n\r\nWe\'re conducting Parents Teacher\'s meet on 19th Oct.From 10 AM to 12 PM. Please be on time.\r\n\r\nAnd, we are celebrating DIWALI FESTIVAL on 22nd Oct. in the school with activities like - Diya decoration, Rangoli making & Dance competition in the school for KIDS AND MOTHERS. The timings will be from 10 AM - 12 PM. Please bring all the stuff related to competition. Please, ensure PARTICIPATION.\r\n\r\nThank you.', '2019-10-21', NULL);
+
 -- --------------------------------------------------------
 
 --
@@ -816,6 +825,13 @@ CREATE TABLE `sliders` (
   `imageName` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `deletedAt` datetime(6) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `sliders`
+--
+
+INSERT INTO `sliders` (`uniqueID`, `title`, `imageName`, `deletedAt`) VALUES
+(1, '', '5dad96092c2d5.jpg', NULL);
 
 -- --------------------------------------------------------
 
@@ -861,8 +877,8 @@ CREATE TABLE `userInformation` (
 --
 
 INSERT INTO `userInformation` (`uniqueID`, `password`, `firstName`, `middleName`, `lastName`, `emailID`, `phoneNumber`, `username`, `UUID`, `creationDatetime`, `lastUpdateDatetime`, `invaildUpdateAttemptsCount`, `userPolicyID`, `isLock`, `deletedAt`) VALUES
-(1, 0x545c236d73fe1231a0865f50a428da30, 'Super', NULL, 'user', 'shubhamjobanputra@gmail.com', '9074200979', 'superUser', '68f244b0-f3ea-11e9-b2f6-1866daef6490', '2019-10-21 18:06:06.371879', '2019-10-21 18:06:06.000000', 0, 1, 0, NULL),
-(2, 0xf663eedc213f0c105a13e151488d0d85, 'Deepak', NULL, 'Mathur', 'dpskidsbhopal@gmail.com', '8878650500', 'DPSkidsAdmin', '68f5a3b1-f3ea-11e9-b2f6-1866daef6490', '2019-10-21 18:06:06.393972', '2019-10-21 18:06:06.000000', 0, 1, 0, NULL);
+(1, 0x545c236d73fe1231a0865f50a428da30, 'Super', NULL, 'user', 'shubhamjobanputra@gmail.com', '9074200979', 'superUser', '865e5dd3-f3ef-11e9-b2f6-1866daef6490', '2019-10-21 18:42:43.217885', '2019-10-21 18:42:43.000000', 0, 1, 0, NULL),
+(2, 0xf663eedc213f0c105a13e151488d0d85, 'Deepak', NULL, 'Mathur', 'dpskidsbhopal@gmail.com', '8878650500', 'DPSkidsAdmin', '86617575-f3ef-11e9-b2f6-1866daef6490', '2019-10-21 18:42:43.238151', '2019-10-21 18:42:43.000000', 0, 1, 0, NULL);
 
 -- --------------------------------------------------------
 
@@ -1049,13 +1065,13 @@ ALTER TABLE `messageMaster`
 -- AUTO_INCREMENT for table `principalMessages`
 --
 ALTER TABLE `principalMessages`
-  MODIFY `uniqueID` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `uniqueID` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `sliders`
 --
 ALTER TABLE `sliders`
-  MODIFY `uniqueID` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `uniqueID` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `students`

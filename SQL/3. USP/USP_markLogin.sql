@@ -21,7 +21,7 @@ DECLARE EXIT HANDLER FOR SQLEXCEPTION
     BEGIN
       START TRANSACTION;
     
-        UPDATE userinformation SET InvaildUpdateAttemptsCount = 0
+        UPDATE userInformation SET InvaildUpdateAttemptsCount = 0
           WHERE username = p_username OR phoneNumber = p_username OR emailID = p_username ;
       
       COMMIT WORK;
@@ -30,7 +30,7 @@ DECLARE EXIT HANDLER FOR SQLEXCEPTION
 
       START TRANSACTION;
     
-      UPDATE userinformation UserInfo
+      UPDATE userInformation UserInfo
         JOIN userpolicy UP ON UP.uniqueID = UserInfo.UserPolicyID
         SET UserInfo.InvaildUpdateAttemptsCount =  ( UserInfo.InvaildUpdateAttemptsCount + 1 ),
         UserInfo.isLock = 

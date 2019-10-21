@@ -2,17 +2,17 @@ DROP procedure IF EXISTS `USP_createUser`;
 
 DELIMITER $$
 CREATE PROCEDURE `USP_createUser` ( 
-    IN p_Password VARCHAR(255) COLLATE utf8_unicode_ci,
-    IN p_ConfirmPassword VARCHAR(255) COLLATE utf8_unicode_ci,
-    IN p_FirstName VARCHAR(255) COLLATE utf8_unicode_ci,
-    IN p_MiddleName VARCHAR(255) COLLATE utf8_unicode_ci,
-    IN p_LastName VARCHAR(255) COLLATE utf8_unicode_ci,
-    IN p_EmailID VARCHAR(255) COLLATE utf8_unicode_ci,
-    IN p_PhoneNumber VARCHAR(255) COLLATE utf8_unicode_ci,
-    IN p_Username  VARCHAR(255) COLLATE utf8_unicode_ci,
-    IN p_UserPolicyID INT COLLATE utf8_unicode_ci,
-    IN p_Language VARCHAR(255)COLLATE utf8_unicode_ci,
-    IN p_Source VARCHAR(255) COLLATE utf8_unicode_ci
+    IN p_Password VARCHAR(255) ,
+    IN p_ConfirmPassword VARCHAR(255) ,
+    IN p_FirstName VARCHAR(255) ,
+    IN p_MiddleName VARCHAR(255) ,
+    IN p_LastName VARCHAR(255) ,
+    IN p_EmailID VARCHAR(255) ,
+    IN p_PhoneNumber VARCHAR(255) ,
+    IN p_Username  VARCHAR(255) ,
+    IN p_UserPolicyID INT ,
+    IN p_Language VARCHAR(255),
+    IN p_Source VARCHAR(255) 
   )
 proc_Call:BEGIN
 	DECLARE RowCount INT DEFAULT 0;

@@ -23,7 +23,7 @@ class forgetPassword extends Controller
         }
         $emailID = trim($request->input("emailID"));
 
-        $row = DB::select('select 1 from userinformation where emailID = ?', [$emailID]);
+        $row = DB::select('select 1 from userInformation where emailID = ?', [$emailID]);
 
         if(count($row) == 0 ){
             $error = ValidationException::withMessages(['Email Id not found to belong to any user.']);

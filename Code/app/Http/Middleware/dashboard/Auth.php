@@ -17,7 +17,7 @@ class Auth
     public function handle($request, Closure $next)
     {
         try {
-            $value = session($request->ip().'DPKS');
+            $value = session(str_replace(".","_",$request->ip()).'DPKS');
             if( !isEmpty($value) && !isEmpty($value['user'])){
                 return $next($request);
             }
